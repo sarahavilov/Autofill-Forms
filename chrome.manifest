@@ -1,0 +1,29 @@
+content		autofillforms					chrome/content/
+locale		autofillforms 		cs-CZ			chrome/locale/cs-CZ/
+locale		autofillforms 		de-DE			chrome/locale/de-DE/
+locale		autofillforms 		el-GR			chrome/locale/el-GR/
+locale		autofillforms 		en-US			chrome/locale/en-US/
+locale		autofillforms 		es-ES			chrome/locale/es-ES/
+locale		autofillforms 		fr-FR			chrome/locale/fr-FR/
+locale		autofillforms 		fi-FI			chrome/locale/fi-FI/
+locale		autofillforms 		he-IL			chrome/locale/he-IL/
+locale		autofillforms 		hr-HR			chrome/locale/hr-HR/
+locale		autofillforms 		hu-HU			chrome/locale/hu-HU/
+locale		autofillforms 		it-IT			chrome/locale/it-IT/
+locale		autofillforms 		nl-NL			chrome/locale/nl-NL/
+locale		autofillforms 		pl-PL			chrome/locale/pl-PL/
+locale		autofillforms 		pt-BR			chrome/locale/pt-BR/
+locale		autofillforms 		ro-RO			chrome/locale/ro-RO/
+locale		autofillforms 		ru-RU			chrome/locale/ru-RU/
+locale		autofillforms 		sk-SK			chrome/locale/sk-SK/
+locale		autofillforms 		sv-SE			chrome/locale/sv-SE/
+locale		autofillforms 		tr-TR			chrome/locale/tr-TR/
+locale		autofillforms 		zh-CN			chrome/locale/zh-CN/
+locale		autofillforms 		zh-TW			chrome/locale/zh-TW/
+skin		autofillforms 		classic/1.0		chrome/skin/
+overlay		chrome://browser/content/browser.xul						chrome://autofillforms/content/autofillFormsOverlay.xul
+style		chrome://global/content/customizeToolbar.xul				chrome://autofillforms/skin/autofillForms.css
+style		chrome://autofillforms/content/autofillFormsOptions.xul		chrome://autofillforms/skin/autofillFormsOptions2.css		appversion<3.0
+style		chrome://autofillforms/content/autofillFormsOptions.xul		chrome://autofillforms/skin/autofillFormsOptions1.5.css		appversion<2.0
+style		chrome://browser/content/browser.xul						chrome://autofillforms/skin/autofillFormsMac.css			appversion>=3.0 os=Darwin
+style		chrome://global/content/customizeToolbar.xul				chrome://autofillforms/skin/autofillFormsMac.css			appversion>=3.0 os=Darwin

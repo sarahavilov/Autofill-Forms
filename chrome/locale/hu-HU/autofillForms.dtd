@@ -1,0 +1,102 @@
+<!ENTITY toolbarbutton.label "Autofill Forms">
+<!ENTITY profilemenuitem.label "Profil váltása">
+<!ENTITY settingsmenuitem.label "Beállítások">
+<!ENTITY helpmenuitem.label "Súgó">
+<!ENTITY autofillformscontextmenuitem.label "Autofill Forms">
+<!ENTITY autofillformscontextmenuitem.accesskey "u">
+<!ENTITY manualfillcontextmenu.label "Mező kitöltése">
+<!ENTITY manualfillcontextmenu.accesskey "e">
+<!ENTITY addrulecontextmenuitem.label "Autofill Forms mezőszabály hozzáadása...">
+<!ENTITY addrulecontextmenuitem.accesskey "h">
+<!ENTITY addformasprofilecontextmenuitem.label "Teljes űrlap hozzáadása mint Autofill Forms profil...">
+<!ENTITY addformasprofilecontextmenuitem.accesskey "p">
+<!ENTITY options.title "Autofill Forms beállítások">
+<!ENTITY prefpanesimplelabel "Egyszerű">
+<!ENTITY prefpanemainlabel "Általános">
+<!ENTITY prefpaneprofileslabel "Profilok">
+<!ENTITY prefpaneadvancedlabel "Haladó">
+<!ENTITY prefpaneguilabel "Kezelőfelület">
+<!ENTITY resetallprofiles.label "Profilok alapértékeinek visszaállítása">
+<!ENTITY profile.label "Profil:">
+<!ENTITY profilesiterule.label "Weboldal szabály">
+<!ENTITY profilename.label "Név">
+<!ENTITY fieldrulename.label "Név">
+<!ENTITY fieldrulevalue.label "Érték">
+<!ENTITY fieldrulesiterule.label "Weboldal szabály">
+<!ENTITY fieldrulefieldrule.label "Mező szabály">
+<!ENTITY fieldruleoverwrite.label "Felülír">
+<!ENTITY fieldruleenabled.label "Aktív">
+<!ENTITY apply.label "Alkalmaz">
+<!ENTITY apply.accesskey "A">
+<!ENTITY add.label "Hozzáadás">
+<!ENTITY add.accesskey "H">
+<!ENTITY remove.label "Eltávolítás">
+<!ENTITY remove.accesskey "E">
+<!ENTITY moveup.label "Felfelé">
+<!ENTITY moveup.accesskey "F">
+<!ENTITY movedown.label "Lefelé">
+<!ENTITY movedown.accesskey "L">
+<!ENTITY disable.label "Letiltás">
+<!ENTITY validate.label "Érvényesítés">
+<!ENTITY validate.accesskey "r">
+<!ENTITY securitycaption.label "Biztonság">
+<!ENTITY storeencrypted.label "Űrlapszabályok titkosított mentése">
+<!ENTITY storagelocationcaption.label "Tárolóhely">
+<!ENTITY useconfigdirectory.label "Űrlapmezőszabályok tárolása egy konfigurációs mappában">
+<!ENTITY browsedir.label "Tallózás...">
+<!ENTITY resetdir.label "Alaphelyzet">
+<!ENTITY opendir.label "Megnyitás">
+<!ENTITY shortcutscaption.label "Gyorsbillentyűk">
+<!ENTITY shortcutfilloutforms.label "Űrlapon kívüli tartalom:">
+<!ENTITY shortcutfilloutandsubmitforms.label "Űrlapok kitöltése és küldése:">
+<!ENTITY shortcutfilloutformsonalltabs.label "Űrlapok kitöltése minden lapon:">
+<!ENTITY shortcutfilloutformsfromprofileselection.label "Űrlapok kitöltése a kiválasztott profilokban:">
+<!ENTITY shortcutprofileswitcher.label "Profil váltása:">
+<!ENTITY shortcutsettings.label "Beállítások:">
+<!ENTITY shortcutdisplayformdetails.label "Űrlaprészletek megjelenítése:">
+<!ENTITY shortcutinfo.label "A megváltoztatott gyorsbillentyűk csak új Firefox ablakban lesznek érvényesek.">
+<!ENTITY mousebuttonscaption.label "Egérgombok">
+<!ENTITY mousebuttonclick.label "Kattintás">
+<!ENTITY mouseshortcutinfo.label "Egérgombok alkalmazása az eszköztár és állapotsor kattintásakor.">
+<!ENTITY viewcaption.label "Nézet">
+<!ENTITY hidestatusbaricon.label "Állapotsor ikon elrejtése">
+<!ENTITY hidecontextmenuitem.label "Elrejtés a helyi menüben">
+<!ENTITY hideformfieldscontextmenu.label "Űrlapmezők helyi menüjének elrejtése">
+<!ENTITY hidetoolbarbutton.label "Eszköztár gomb elrejtése">
+<!ENTITY hidetoolbarbuttonmenu.label "Eszköztár gomb menüjének elrejtése">
+<!ENTITY enableconfirmationdialogs.label "Megerősítő ablakok megjelenítése">
+<!ENTITY highlightstylematch.label "Az automatikusan kitöltött űrlapmezők stíluslapja:">
+<!ENTITY highlightstylenomatch.label "A nem automatikusan kitöltött űrlapmezők stíluslapja:">
+<!ENTITY formdetailsstyle.label "Űrlaprészletek stíluslapja:">
+<!ENTITY miscellaneous.label "Vegyes">
+<!ENTITY ignoredisabledrulesonautofill.label "Letiltott szabályok mellőzése űrlapok automatikus kitöltésekor">
+<!ENTITY ignoredisabledfields.label "Ignore disabled fields">
+<!ENTITY focuslastformelementmatch.label "Az utolsó találat előtérbe hozása">
+<!ENTITY autoselectbestprofile.label "A legmegfelelőbb profil automatikus kiválasztása">
+<!ENTITY matchagainstlabels.label "Szabályok további egyeztetése az űrlapmező címkéivel">
+<!ENTITY identifylabelsinstrictmode.label "Űrlapmezők címkéinek azonosítása szigorú módban">
+<!ENTITY matchagainstpositions.label "A szabályok kereshetnek űrlapmezőt pozíció szerint">
+<!ENTITY rememberalternativesindex.label "Alternatív jegyzék használata a további kiválasztásokhoz">
+<!ENTITY placeholderlinebreak.label "Szóközök megtartása a szövegmezőkben:">
+<!ENTITY placeholdertab.label "Szóközök megtartása a tabulátoroknál:">
+<!ENTITY enableglobalprofile.label "Globális profil engedélyezése:">
+<!ENTITY formfieldscontextmenu.label "Helyi menü megjelenítése az űrlapmezőkben:">
+<!ENTITY formfieldscontextmenuitemallprofiles.label "Minden profil">
+<!ENTITY formfieldscontextmenuitemactiveprofile.label "Aktív profil">
+<!ENTITY profileimportexport.label "Profil importálása/exportálása">
+<!ENTITY profileimportbutton.label "Profil importálása...">
+<!ENTITY profileexportbutton.label "Jelenlegi profil exportálása...">
+<!ENTITY profileexportallbutton.label "Export all Profiles...">
+<!ENTITY formdetails.label "Űrlaprészletek megjelenítése">
+<!ENTITY ruleeditorbutton.label "Szabályszerkesztő...">
+<!ENTITY ruleeditor.title "Szabályszerkesztő">
+<!ENTITY ruleeditorinfo.label "A feltételek VAGY relációval kapcsolódnak egymáshoz - elegendő, ha egy érvényes közülük.">
+<!ENTITY ruleeditorcondition.label "Keresett szöveg ...">
+<!ENTITY tagsenable.label "Dinamikus címkék engedélyezése">
+<!ENTITY tagsedit.label "Dinamikus címkék szerkesztése...">
+<!ENTITY tageditor.title "Dinamikus címke szerkesztő">
+<!ENTITY tagimportexport.label "Dynamic tags Import / Export">
+<!ENTITY tagimportbutton.label "Import Tags...">
+<!ENTITY tagexportbutton.label "Export Tags...">
+<!ENTITY disablealternatives.label "Disable alternatives (always use first match)">
+<!ENTITY callonchangeafterfillingfields.label "Trigger onchange events after filling out fields">

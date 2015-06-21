@@ -1,0 +1,102 @@
+<!ENTITY toolbarbutton.label "Automaticky vyplniť formuláre">
+<!ENTITY profilemenuitem.label "Prepnutie profilu">
+<!ENTITY settingsmenuitem.label "Nastavenia">
+<!ENTITY helpmenuitem.label "Help">
+<!ENTITY autofillformscontextmenuitem.label "Autofill Forms">
+<!ENTITY autofillformscontextmenuitem.accesskey "u">
+<!ENTITY manualfillcontextmenu.label "Fill out this field">
+<!ENTITY manualfillcontextmenu.accesskey "f">
+<!ENTITY addrulecontextmenuitem.label "Add an Autofill Forms Rule for this field...">
+<!ENTITY addrulecontextmenuitem.accesskey "f">
+<!ENTITY addformasprofilecontextmenuitem.label "Add complete form as Autofill Forms profile...">
+<!ENTITY addformasprofilecontextmenuitem.accesskey "c">
+<!ENTITY options.title "Nastavenia automatického vypĺňania formulárov">
+<!ENTITY prefpanesimplelabel "Simple">
+<!ENTITY prefpanemainlabel "Hlavné">
+<!ENTITY prefpaneprofileslabel "Profiles">
+<!ENTITY prefpaneadvancedlabel "Rozšírené">
+<!ENTITY prefpaneguilabel "Interface">
+<!ENTITY resetallprofiles.label "Reset all profiles">
+<!ENTITY profile.label "Profil:">
+<!ENTITY profilesiterule.label "Site rule">
+<!ENTITY profilename.label "Name">
+<!ENTITY fieldrulename.label "Názov">
+<!ENTITY fieldrulevalue.label "Hodnota">
+<!ENTITY fieldrulesiterule.label "Pravidlo pre stránku">
+<!ENTITY fieldrulefieldrule.label "Pravidlo pre pole">
+<!ENTITY fieldruleoverwrite.label "Prepísať">
+<!ENTITY fieldruleenabled.label "Povolené">
+<!ENTITY apply.label "Použiť">
+<!ENTITY apply.accesskey "p">
+<!ENTITY add.label "Pridať">
+<!ENTITY add.accesskey "r">
+<!ENTITY remove.label "Odstrániť">
+<!ENTITY remove.accesskey "o">
+<!ENTITY moveup.label "Posunúť nahor">
+<!ENTITY moveup.accesskey "h">
+<!ENTITY movedown.label "Posunúť nadol">
+<!ENTITY movedown.accesskey "d">
+<!ENTITY disable.label "Zakázať">
+<!ENTITY validate.label "Overiť">
+<!ENTITY validate.accesskey "v">
+<!ENTITY securitycaption.label "Bezpečnosť">
+<!ENTITY storeencrypted.label "Ukladať pravidlá pre polia nešifrované">
+<!ENTITY storagelocationcaption.label "Storage location">
+<!ENTITY useconfigdirectory.label "Store form field rules in a custom config directory">
+<!ENTITY browsedir.label "Browse...">
+<!ENTITY resetdir.label "Reset">
+<!ENTITY opendir.label "Open">
+<!ENTITY shortcutscaption.label "Klávesové skratky">
+<!ENTITY shortcutfilloutforms.label "Vyplniť formuláre:">
+<!ENTITY shortcutfilloutandsubmitforms.label "Fill out and submit forms:">
+<!ENTITY shortcutfilloutformsonalltabs.label "Fill out forms on all tabs:">
+<!ENTITY shortcutfilloutformsfromprofileselection.label "Fill out forms from profile selection:">
+<!ENTITY shortcutprofileswitcher.label "Prepnúť profil:">
+<!ENTITY shortcutsettings.label "Nastavenia:">
+<!ENTITY shortcutdisplayformdetails.label "Display Form Details:">
+<!ENTITY shortcutinfo.label "Zmena klávesových skratiek nastane až v novom okne Firefoxu.">
+<!ENTITY mousebuttonscaption.label "Mouse buttons">
+<!ENTITY mousebuttonclick.label "Click">
+<!ENTITY mouseshortcutinfo.label "Mouse buttons apply to toolbar button or statusbar icon clicks.">
+<!ENTITY viewcaption.label "View">
+<!ENTITY hidestatusbaricon.label "Hide statusbar icon">
+<!ENTITY hidecontextmenuitem.label "Hide context menu item">
+<!ENTITY hideformfieldscontextmenu.label "Hide form fields context menu">
+<!ENTITY hidetoolbarbutton.label "Hide toolbar button">
+<!ENTITY hidetoolbarbuttonmenu.label "Hide toolbar button menu">
+<!ENTITY enableconfirmationdialogs.label "Enable confirmation dialogs">
+<!ENTITY highlightstylematch.label "CSS Style for autofilled form fields:">
+<!ENTITY highlightstylenomatch.label "CSS Style for not autofilled form fields:">
+<!ENTITY formdetailsstyle.label "CSS Style for form details:">
+<!ENTITY miscellaneous.label "Rôzne">
+<!ENTITY ignoredisabledrulesonautofill.label "Ignore disabled rules when filling out forms automatically">
+<!ENTITY ignoredisabledfields.label "Ignore disabled fields">
+<!ENTITY focuslastformelementmatch.label "Set focus on last matched form field">
+<!ENTITY autoselectbestprofile.label "Automatically select the best matching profile">
+<!ENTITY matchagainstlabels.label "Match rules against form field labels additionally">
+<!ENTITY identifylabelsinstrictmode.label "Identify form field labels in strict mode">
+<!ENTITY matchagainstpositions.label "Allow rules to match form fields by position">
+<!ENTITY rememberalternativesindex.label "Use selected alternatives index for subsequent selections">
+<!ENTITY placeholderlinebreak.label "Placeholder for line breaks in textareas:">
+<!ENTITY placeholdertab.label "Placeholder for tabulator input:">
+<!ENTITY enableglobalprofile.label "Enable Global Profile:">
+<!ENTITY formfieldscontextmenu.label "Show in form fields context menu:">
+<!ENTITY formfieldscontextmenuitemallprofiles.label "All profiles">
+<!ENTITY formfieldscontextmenuitemactiveprofile.label "Active profile">
+<!ENTITY profileimportexport.label "Profile Import / Export">
+<!ENTITY profileimportbutton.label "Import Profile(s)...">
+<!ENTITY profileexportbutton.label "Export current Profile...">
+<!ENTITY profileexportallbutton.label "Export all Profiles...">
+<!ENTITY formdetails.label "Display Form Details">
+<!ENTITY ruleeditorbutton.label "Rule Editor...">
+<!ENTITY ruleeditor.title "Rule Editor">
+<!ENTITY ruleeditorinfo.label "The conditions are linked together as disjunctions (OR relations) - only one of them must match.">
+<!ENTITY ruleeditorcondition.label "The searched string ...">
+<!ENTITY tagsenable.label "Enable dynamic tags">
+<!ENTITY tagsedit.label "Edit dynamic tags...">
+<!ENTITY tageditor.title "Dynamic Tag Editor">
+<!ENTITY tagimportexport.label "Dynamic tags Import / Export">
+<!ENTITY tagimportbutton.label "Import Tags...">
+<!ENTITY tagexportbutton.label "Export Tags...">
+<!ENTITY disablealternatives.label "Disable alternatives (always use first match)">
+<!ENTITY callonchangeafterfillingfields.label "Trigger onchange events after filling out fields">

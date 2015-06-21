@@ -1,0 +1,102 @@
+<!ENTITY toolbarbutton.label "Автозаполнение форм">
+<!ENTITY profilemenuitem.label "Менеджер профилей">
+<!ENTITY settingsmenuitem.label "Настройки">
+<!ENTITY helpmenuitem.label "Help">
+<!ENTITY autofillformscontextmenuitem.label "Autofill Forms">
+<!ENTITY autofillformscontextmenuitem.accesskey "u">
+<!ENTITY manualfillcontextmenu.label "Fill out this field">
+<!ENTITY manualfillcontextmenu.accesskey "f">
+<!ENTITY addrulecontextmenuitem.label "Add an Autofill Forms Rule for this field...">
+<!ENTITY addrulecontextmenuitem.accesskey "f">
+<!ENTITY addformasprofilecontextmenuitem.label "Add complete form as Autofill Forms profile...">
+<!ENTITY addformasprofilecontextmenuitem.accesskey "c">
+<!ENTITY options.title "Настройки «Autofill Forms»">
+<!ENTITY prefpanesimplelabel "Simple">
+<!ENTITY prefpanemainlabel "Основные">
+<!ENTITY prefpaneprofileslabel "Profiles">
+<!ENTITY prefpaneadvancedlabel "Дополнительно">
+<!ENTITY prefpaneguilabel "Interface">
+<!ENTITY resetallprofiles.label "Reset all profiles">
+<!ENTITY profile.label "Профиль:">
+<!ENTITY profilesiterule.label "Site rule">
+<!ENTITY profilename.label "Name">
+<!ENTITY fieldrulename.label "Имя">
+<!ENTITY fieldrulevalue.label "Значение">
+<!ENTITY fieldrulesiterule.label "Правило для сайта">
+<!ENTITY fieldrulefieldrule.label "Правило для поля">
+<!ENTITY fieldruleoverwrite.label "Перезаписать">
+<!ENTITY fieldruleenabled.label "Использовать">
+<!ENTITY apply.label "Применить">
+<!ENTITY apply.accesskey "и">
+<!ENTITY add.label "Добавить">
+<!ENTITY add.accesskey "о">
+<!ENTITY remove.label "Удалить">
+<!ENTITY remove.accesskey "ь">
+<!ENTITY moveup.label "Выше">
+<!ENTITY moveup.accesskey "ы">
+<!ENTITY movedown.label "Ниже">
+<!ENTITY movedown.accesskey "е">
+<!ENTITY disable.label "Отключить">
+<!ENTITY validate.label "Validate">
+<!ENTITY validate.accesskey "v">
+<!ENTITY securitycaption.label "Безопасность">
+<!ENTITY storeencrypted.label "Хранить зашифрованными правила полей форм">
+<!ENTITY storagelocationcaption.label "Storage location">
+<!ENTITY useconfigdirectory.label "Store form field rules in a custom config directory">
+<!ENTITY browsedir.label "Browse...">
+<!ENTITY resetdir.label "Reset">
+<!ENTITY opendir.label "Open">
+<!ENTITY shortcutscaption.label "Клавиатурные сокращения">
+<!ENTITY shortcutfilloutforms.label "Заполнять формы:">
+<!ENTITY shortcutfilloutandsubmitforms.label "Fill out and submit forms:">
+<!ENTITY shortcutfilloutformsonalltabs.label "Fill out forms on all tabs:">
+<!ENTITY shortcutfilloutformsfromprofileselection.label "Fill out forms from profile selection:">
+<!ENTITY shortcutprofileswitcher.label "Менеджер профилей:">
+<!ENTITY shortcutsettings.label "Настройки:">
+<!ENTITY shortcutdisplayformdetails.label "Display Form Details:">
+<!ENTITY shortcutinfo.label "Новое клавиатурное сочетание вступит в силу только в новом окне Firefox.">
+<!ENTITY mousebuttonscaption.label "Mouse buttons">
+<!ENTITY mousebuttonclick.label "Click">
+<!ENTITY mouseshortcutinfo.label "Mouse buttons apply to toolbar button or statusbar icon clicks.">
+<!ENTITY viewcaption.label "View">
+<!ENTITY hidestatusbaricon.label "Hide statusbar icon">
+<!ENTITY hidecontextmenuitem.label "Hide context menu item">
+<!ENTITY hideformfieldscontextmenu.label "Hide form fields context menu">
+<!ENTITY hidetoolbarbutton.label "Hide toolbar button">
+<!ENTITY hidetoolbarbuttonmenu.label "Hide toolbar button menu">
+<!ENTITY enableconfirmationdialogs.label "Enable confirmation dialogs">
+<!ENTITY highlightstylematch.label "CSS Style for autofilled form fields:">
+<!ENTITY highlightstylenomatch.label "CSS Style for not autofilled form fields:">
+<!ENTITY formdetailsstyle.label "CSS Style for form details:">
+<!ENTITY miscellaneous.label "Miscellaneous">
+<!ENTITY ignoredisabledrulesonautofill.label "Ignore disabled rules when filling out forms automatically">
+<!ENTITY ignoredisabledfields.label "Ignore disabled fields">
+<!ENTITY focuslastformelementmatch.label "Set focus on last matched form field">
+<!ENTITY autoselectbestprofile.label "Automatically select the best matching profile">
+<!ENTITY matchagainstlabels.label "Match rules against form field labels additionally">
+<!ENTITY identifylabelsinstrictmode.label "Identify form field labels in strict mode">
+<!ENTITY matchagainstpositions.label "Allow rules to match form fields by position">
+<!ENTITY rememberalternativesindex.label "Use selected alternatives index for subsequent selections">
+<!ENTITY placeholderlinebreak.label "Placeholder for line breaks in textareas:">
+<!ENTITY placeholdertab.label "Placeholder for tabulator input:">
+<!ENTITY enableglobalprofile.label "Enable Global Profile:">
+<!ENTITY formfieldscontextmenu.label "Show in form fields context menu:">
+<!ENTITY formfieldscontextmenuitemallprofiles.label "All profiles">
+<!ENTITY formfieldscontextmenuitemactiveprofile.label "Active profile">
+<!ENTITY profileimportexport.label "Импорт / Экспорт профилей">
+<!ENTITY profileimportbutton.label "Импортировать профиль...">
+<!ENTITY profileexportbutton.label "Экспортировать текущий профиль...">
+<!ENTITY profileexportallbutton.label "Export all Profiles...">
+<!ENTITY formdetails.label "Отображать подробности форм">
+<!ENTITY ruleeditorbutton.label "Редактор правил...">
+<!ENTITY ruleeditor.title "Редактор правил">
+<!ENTITY ruleeditorinfo.label "The conditions are linked together as disjunctions (OR relations) - only one of them must match.">
+<!ENTITY ruleeditorcondition.label "Искомая строка ...">
+<!ENTITY tagsenable.label "Enable dynamic tags">
+<!ENTITY tagsedit.label "Edit dynamic tags...">
+<!ENTITY tageditor.title "Dynamic Tag Editor">
+<!ENTITY tagimportexport.label "Dynamic tags Import / Export">
+<!ENTITY tagimportbutton.label "Import Tags...">
+<!ENTITY tagexportbutton.label "Export Tags...">
+<!ENTITY disablealternatives.label "Disable alternatives (always use first match)">
+<!ENTITY callonchangeafterfillingfields.label "Trigger onchange events after filling out fields">

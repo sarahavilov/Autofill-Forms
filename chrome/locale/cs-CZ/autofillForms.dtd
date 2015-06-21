@@ -1,0 +1,102 @@
+<!ENTITY toolbarbutton.label "Autofill Forms">
+<!ENTITY profilemenuitem.label "Přepínač profilů">
+<!ENTITY settingsmenuitem.label "Nastavení">
+<!ENTITY helpmenuitem.label "Nápověda">
+<!ENTITY autofillformscontextmenuitem.label "Autofill Forms">
+<!ENTITY autofillformscontextmenuitem.accesskey "u">
+<!ENTITY manualfillcontextmenu.label "Vyplnit toto pole">
+<!ENTITY manualfillcontextmenu.accesskey "V">
+<!ENTITY addrulecontextmenuitem.label "Přidat do Autofill Forms pravidlo pro toto pole...">
+<!ENTITY addrulecontextmenuitem.accesskey "f">
+<!ENTITY addformasprofilecontextmenuitem.label "Přidat kompletní formulář jako profil Autofill Forms...">
+<!ENTITY addformasprofilecontextmenuitem.accesskey "k">
+<!ENTITY options.title "Nastavení Autofill Forms">
+<!ENTITY prefpanesimplelabel "Jednoduché">
+<!ENTITY prefpanemainlabel "Hlavní">
+<!ENTITY prefpaneprofileslabel "Profily">
+<!ENTITY prefpaneadvancedlabel "Pokročilé">
+<!ENTITY prefpaneguilabel "Rozhraní">
+<!ENTITY resetallprofiles.label "Resetovat všechny profily">
+<!ENTITY profile.label "Profil:">
+<!ENTITY profilesiterule.label "Pravidlo stránky">
+<!ENTITY profilename.label "Jméno">
+<!ENTITY fieldrulename.label "Jméno">
+<!ENTITY fieldrulevalue.label "Hodnota">
+<!ENTITY fieldrulesiterule.label "Pravidlo stránky">
+<!ENTITY fieldrulefieldrule.label "Pravidlo pole">
+<!ENTITY fieldruleoverwrite.label "Přepsat">
+<!ENTITY fieldruleenabled.label "Zapnuto">
+<!ENTITY apply.label "Použít">
+<!ENTITY apply.accesskey "P">
+<!ENTITY add.label "Přidat">
+<!ENTITY add.accesskey "a">
+<!ENTITY remove.label "Odstranit">
+<!ENTITY remove.accesskey "r">
+<!ENTITY moveup.label "Posunout nahoru">
+<!ENTITY moveup.accesskey "u">
+<!ENTITY movedown.label "Posunout dolů">
+<!ENTITY movedown.accesskey "d">
+<!ENTITY disable.label "Vypnout">
+<!ENTITY validate.label "Zkontrolovat platnost">
+<!ENTITY validate.accesskey "t">
+<!ENTITY securitycaption.label "Bezpečnost">
+<!ENTITY storeencrypted.label "Ukládat pravidla formulářů zašifrovaná">
+<!ENTITY storagelocationcaption.label "Umístění úložiště">
+<!ENTITY useconfigdirectory.label "Ukládat pravidla pole formuláře  do vlastního konfiguračního adresáře">
+<!ENTITY browsedir.label "Procházet...">
+<!ENTITY resetdir.label "Resetovat">
+<!ENTITY opendir.label "Otevřít">
+<!ENTITY shortcutscaption.label "Klávesové zkratky">
+<!ENTITY shortcutfilloutforms.label "Vyplnit formuláře:">
+<!ENTITY shortcutfilloutandsubmitforms.label "Vyplnit a odeslat formuláře:">
+<!ENTITY shortcutfilloutformsonalltabs.label "Vyplnit formuláře ve všech panelech:">
+<!ENTITY shortcutfilloutformsfromprofileselection.label "Vyplnit formuláře z výběru profilu:">
+<!ENTITY shortcutprofileswitcher.label "Přepínač profilů:">
+<!ENTITY shortcutsettings.label "Nastavení:">
+<!ENTITY shortcutdisplayformdetails.label "Zobrazit detaily formuláře:">
+<!ENTITY shortcutinfo.label "Nové nastavení klávesových zkratek se projeví až v novém okně Firefoxu.">
+<!ENTITY mousebuttonscaption.label "Tlačítka myši">
+<!ENTITY mousebuttonclick.label "Klepnout">
+<!ENTITY mouseshortcutinfo.label "Tlačítka myši se použijí na klepnutí na tlačítko v nástrojové liště nebo ikonu ve stavovém řádku.">
+<!ENTITY viewcaption.label "Zobrazení">
+<!ENTITY hidestatusbaricon.label "Skyrý ikonu ve stavovém řádku">
+<!ENTITY hidecontextmenuitem.label "Skrýt položku v místní nabídce">
+<!ENTITY hideformfieldscontextmenu.label "Skrýt místní nabídku vyplnění polí formuláře">
+<!ENTITY hidetoolbarbutton.label "Skrýt tlačítko v nástrojové liště">
+<!ENTITY hidetoolbarbuttonmenu.label "Skrýt nabídku tlačítka v nástrojové liště">
+<!ENTITY enableconfirmationdialogs.label "Zapnout potvrzovací dialogová okna">
+<!ENTITY highlightstylematch.label "Kaskádové styly pro automaticky doplněná pole formuláře:">
+<!ENTITY highlightstylenomatch.label "Kaskádové styly pro automaticky nedoplňovaná pole formuláře:">
+<!ENTITY formdetailsstyle.label "Kaskádové styly pro detail formuláře:">
+<!ENTITY miscellaneous.label "Různé">
+<!ENTITY ignoredisabledrulesonautofill.label "Ignorovat vypnutá pravidla při automatickém doplnění formulářů">
+<!ENTITY ignoredisabledfields.label "Ignore disabled fields">
+<!ENTITY focuslastformelementmatch.label "Zaměřit se na poslední odpovídající pole formuláře">
+<!ENTITY autoselectbestprofile.label "Automaticky zvolit pro vás nejlepší profil">
+<!ENTITY matchagainstlabels.label "Souhlasící pravidla pro pole formuláře označit dodatečně">
+<!ENTITY identifylabelsinstrictmode.label "Identifikovat označení pole formuláře podle striktních pravidel">
+<!ENTITY matchagainstpositions.label "Povolit souhlasení pravidel polí formuláře podle pozice">
+<!ENTITY rememberalternativesindex.label "Použít alternativní rejstřík pro následující výběry">
+<!ENTITY placeholderlinebreak.label "Zachování rozložení řádku (mezer) v textových oblastech:">
+<!ENTITY placeholdertab.label "Zachování rozložení pro vstup tabulátoru:">
+<!ENTITY enableglobalprofile.label "Zapnout globální profil:">
+<!ENTITY formfieldscontextmenu.label "Zobrazit v polích formuláře místní nabídku:">
+<!ENTITY formfieldscontextmenuitemallprofiles.label "Všechny profily">
+<!ENTITY formfieldscontextmenuitemactiveprofile.label "Aktivní profil">
+<!ENTITY profileimportexport.label "Importovat/Exportovat profil">
+<!ENTITY profileimportbutton.label "Importovat profil...">
+<!ENTITY profileexportbutton.label "Exportovat současný profil...">
+<!ENTITY profileexportallbutton.label "Export all Profiles...">
+<!ENTITY formdetails.label "Zobrazit detaily formuláře">
+<!ENTITY ruleeditorbutton.label "Editor pravidel...">
+<!ENTITY ruleeditor.title "Editor pravidel">
+<!ENTITY ruleeditorinfo.label "Podmínky nejsou spojené dohromady (NEBO jsou ve vztahu) - musí se rovnat pouze jedna z nich.">
+<!ENTITY ruleeditorcondition.label "Hledaný řetězec...">
+<!ENTITY tagsenable.label "Zapnout dynamické tagy">
+<!ENTITY tagsedit.label "Upravit dynamické tagy...">
+<!ENTITY tageditor.title "Editor dynamických tagů">
+<!ENTITY tagimportexport.label "Dynamic tags Import / Export">
+<!ENTITY tagimportbutton.label "Import Tags...">
+<!ENTITY tagexportbutton.label "Export Tags...">
+<!ENTITY disablealternatives.label "Disable alternatives (always use first match)">
+<!ENTITY callonchangeafterfillingfields.label "Trigger onchange events after filling out fields">

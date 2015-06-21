@@ -1,0 +1,102 @@
+<!ENTITY toolbarbutton.label "Wypełnianie formularzy">
+<!ENTITY profilemenuitem.label "Zmień profil">
+<!ENTITY settingsmenuitem.label "Ustawienia">
+<!ENTITY helpmenuitem.label "Pomoc">
+<!ENTITY autofillformscontextmenuitem.label "Autofill Forms">
+<!ENTITY autofillformscontextmenuitem.accesskey "u">
+<!ENTITY manualfillcontextmenu.label "Wypełnij to pole">
+<!ENTITY manualfillcontextmenu.accesskey "W">
+<!ENTITY addrulecontextmenuitem.label "Dodaj regułę wypełniania dla tego pola">
+<!ENTITY addrulecontextmenuitem.accesskey "O">
+<!ENTITY addformasprofilecontextmenuitem.label "Dodaj formularz jako profil Autofill Forms...">
+<!ENTITY addformasprofilecontextmenuitem.accesskey "F">
+<!ENTITY options.title "Autofill Forms - ustawienia">
+<!ENTITY prefpanesimplelabel "Podstawowe">
+<!ENTITY prefpanemainlabel "Ogólne">
+<!ENTITY prefpaneprofileslabel "Profile">
+<!ENTITY prefpaneadvancedlabel "Zaawansowane">
+<!ENTITY prefpaneguilabel "Interfejs">
+<!ENTITY resetallprofiles.label "Resetuj wszystkie profile">
+<!ENTITY profile.label "Profil:">
+<!ENTITY profilesiterule.label "Reguły witryny">
+<!ENTITY profilename.label "Nazwa">
+<!ENTITY fieldrulename.label "Nazwa">
+<!ENTITY fieldrulevalue.label "Wartość">
+<!ENTITY fieldrulesiterule.label "Reguły witryny">
+<!ENTITY fieldrulefieldrule.label "Reguły pola">
+<!ENTITY fieldruleoverwrite.label "Nadpisz">
+<!ENTITY fieldruleenabled.label "Aktywna">
+<!ENTITY apply.label "Zastosuj">
+<!ENTITY apply.accesskey "Z">
+<!ENTITY add.label "Dodaj">
+<!ENTITY add.accesskey "a">
+<!ENTITY remove.label "Usuń">
+<!ENTITY remove.accesskey "U">
+<!ENTITY moveup.label "W górę">
+<!ENTITY moveup.accesskey "g">
+<!ENTITY movedown.label "W dół">
+<!ENTITY movedown.accesskey "d">
+<!ENTITY disable.label "Wyłącz">
+<!ENTITY validate.label "Sprawdź">
+<!ENTITY validate.accesskey "S">
+<!ENTITY securitycaption.label "Bezpieczeństwo">
+<!ENTITY storeencrypted.label "Przechowuj dane formularzy w formie zakodowanej">
+<!ENTITY storagelocationcaption.label "lokalizacja">
+<!ENTITY useconfigdirectory.label "Przechowuj reguły pól formularzy w katalogu konfiguracyjnym">
+<!ENTITY browsedir.label "Przeglądaj">
+<!ENTITY resetdir.label "Resetuj">
+<!ENTITY opendir.label "Otwórz">
+<!ENTITY shortcutscaption.label "Skróty klawiaturowe">
+<!ENTITY shortcutfilloutforms.label "Wypełnianie formularzy:">
+<!ENTITY shortcutfilloutandsubmitforms.label "Wypełnij i wyślij formularze:">
+<!ENTITY shortcutfilloutformsonalltabs.label "Wypełnij formularze we wszystkich kartach:">
+<!ENTITY shortcutfilloutformsfromprofileselection.label "Wypełnij formularze danymi z wybranego profilu:">
+<!ENTITY shortcutprofileswitcher.label "Zmiana profilu:">
+<!ENTITY shortcutsettings.label "Ustawienia:">
+<!ENTITY shortcutdisplayformdetails.label "Wyświetlaj szczegóły formularza:">
+<!ENTITY shortcutinfo.label "Nowe skróty klawiaturowe będą działały w nowych oknach">
+<!ENTITY mousebuttonscaption.label "Przyciski myszy">
+<!ENTITY mousebuttonclick.label "Kliknięcie">
+<!ENTITY mouseshortcutinfo.label "Kliknięcia przyciskami myszy przypisane do przycisków paska narzędzi lub paska stanu">
+<!ENTITY viewcaption.label "Widok">
+<!ENTITY hidestatusbaricon.label "Nie wyświetlaj ikony na pasku stanu">
+<!ENTITY hidecontextmenuitem.label "Nie wyświetlaj w menu kontekstowym">
+<!ENTITY hideformfieldscontextmenu.label "Nie wyświetlaj w menu kontekstowym pól">
+<!ENTITY hidetoolbarbutton.label "Nie wyświetlaj przycisku na pasku narzędzi">
+<!ENTITY hidetoolbarbuttonmenu.label "Nie wyświetlaj menu przycisku narzędziowego">
+<!ENTITY enableconfirmationdialogs.label "Włącz potwierdzanie dialogów">
+<!ENTITY highlightstylematch.label "Styl CSS dla automatycznie wypełnianych pól formularza:">
+<!ENTITY highlightstylenomatch.label "Styl CSS dla niewypełnianych automatycznie pól formularza:">
+<!ENTITY formdetailsstyle.label "Styl CSS dla formularza:">
+<!ENTITY miscellaneous.label "Różne">
+<!ENTITY ignoredisabledrulesonautofill.label "Podczas wypełniania automatycznego pomijaj wyłączone reguły">
+<!ENTITY ignoredisabledfields.label "Ignore disabled fields">
+<!ENTITY focuslastformelementmatch.label "Uaktywnij ostatnie pasujące pole formularza">
+<!ENTITY autoselectbestprofile.label "Automatycznie wybierz najlepiej pasujący profil">
+<!ENTITY matchagainstlabels.label "Dopasuj dane do etykiet pól formularza">
+<!ENTITY identifylabelsinstrictmode.label "Identyfikuj etykiety pól formularza dokładnie">
+<!ENTITY matchagainstpositions.label "Zezwalaj regułom do dopasowywania pól formularza wg pozycji">
+<!ENTITY rememberalternativesindex.label "Użyj wybranego alternatywnego indeksu dla następnych wyborów">
+<!ENTITY placeholderlinebreak.label "Znacznik łamania linii w polach tekstowych:">
+<!ENTITY placeholdertab.label "Zamiennik dla tabulatora">
+<!ENTITY enableglobalprofile.label "Włącz globalny profil:">
+<!ENTITY formfieldscontextmenu.label "Wyświetlaj w polach formularza menu kontekstowe">
+<!ENTITY formfieldscontextmenuitemallprofiles.label "Wszystkie profile">
+<!ENTITY formfieldscontextmenuitemactiveprofile.label "Aktywny profil">
+<!ENTITY profileimportexport.label "Import/Eksport profilu">
+<!ENTITY profileimportbutton.label "Importuj profil">
+<!ENTITY profileexportbutton.label "Eksportuj profil">
+<!ENTITY profileexportallbutton.label "Export all Profiles...">
+<!ENTITY formdetails.label "Wyświetl szczegóły w formularzu">
+<!ENTITY ruleeditorbutton.label "Edytor reguł">
+<!ENTITY ruleeditor.title "Edytor reguł">
+<!ENTITY ruleeditorinfo.label "Reguły są łączone razem ale rozdzielone warunkiem &quot;OR&quot; - tylko jedna z nich musi pasować">
+<!ENTITY ruleeditorcondition.label "Szukany ciąg znaków ...">
+<!ENTITY tagsenable.label "Włącz dynamiczne znaczniki">
+<!ENTITY tagsedit.label "Edytuj dynamiczne znaczniki">
+<!ENTITY tageditor.title "Edytor dynamicznych znaczników">
+<!ENTITY tagimportexport.label "Dynamic tags Import / Export">
+<!ENTITY tagimportbutton.label "Import Tags...">
+<!ENTITY tagexportbutton.label "Export Tags...">
+<!ENTITY disablealternatives.label "Disable alternatives (always use first match)">
+<!ENTITY callonchangeafterfillingfields.label "Trigger onchange events after filling out fields">

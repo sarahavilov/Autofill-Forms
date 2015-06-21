@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>autofillForms@blueimp.net</em:id>
+    <em:name>Autofill Forms</em:name>
+    <em:creator>Sebastian Tschan</em:creator>
+    <em:contributor>Sarah Avilov</em:contributor>
+    <em:description>Fill out web forms automatically</em:description>
+    <em:iconURL>chrome://autofillForms/skin/icon.png</em:iconURL>
+    <em:optionsURL>chrome://autofillForms/content/autofillFormsOptions.xul</em:optionsURL>
+    <em:homepageURL>http://firefox.add0n.com/autofill-forms.html</em:homepageURL>
+    <em:version>1.0.4</em:version>
+    <em:type>2</em:type>
+    <em:targetApplication>
+      <Description>
+        <!-- Firefox -->
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>17.0</em:minVersion>
+        <em:maxVersion>35.0</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+    <em:targetApplication>
+      <Description>
+        <!-- Midbrowser -->
+        <em:id>{aa5ca914-c309-495d-91cf-3141bbb04115}</em:id>
+        <em:minVersion>0.2</em:minVersion>
+        <em:maxVersion>2.0.0.6</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+    <em:translator>PetrTwo (Czech)</em:translator>
+    <em:translator>Oliver Roth (German)</em:translator>
+    <em:translator>Koumen (Greek)</em:translator>
+    <em:translator>jesuspportillo (Spanish)</em:translator>
+    <em:translator>Unknown (Finnish)</em:translator>
+    <em:translator>myahoo (French)</em:translator>
+    <em:translator>YuvalSht (Hebrew)</em:translator>
+    <em:translator>Mikes Kaszmán István (Hungarian)</em:translator>
+    <em:translator>Underpass (Italian)</em:translator>
+    <em:translator>gonzalopirobutirro (Italian)</em:translator>
+    <em:translator>Godai71 (Italian)</em:translator>
+    <em:translator>markh (Dutch)</em:translator>
+    <em:translator>teo (Polish)</em:translator>
+    <em:translator>Alberto Eidh (Portuguese - Brazilian)</em:translator>
+    <em:translator>x10firefox (Romanian)</em:translator>
+    <em:translator>Unknown (Russian)</em:translator>
+    <em:translator>Umut (Swedish)</em:translator>
+    <em:translator>ch0ze (Slovak)</em:translator>
+    <em:translator>KenanBalamir (Turkish)</em:translator>
+    <em:translator>simophin (Chinese - Simplified)</em:translator>
+    <em:translator>Lu Ming-Tse (呂明澤) (Chinese - Traditional)</em:translator>
+  </Description>
+</RDF>

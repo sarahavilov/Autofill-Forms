@@ -1,0 +1,102 @@
+<!ENTITY toolbarbutton.label "Autofill Forms">
+<!ENTITY profilemenuitem.label "Profiel wisselen">
+<!ENTITY settingsmenuitem.label "Instellingen">
+<!ENTITY helpmenuitem.label "Help">
+<!ENTITY autofillformscontextmenuitem.label "Formulieren automatisch invullen">
+<!ENTITY autofillformscontextmenuitem.accesskey "u">
+<!ENTITY manualfillcontextmenu.label "Dit veld invullen">
+<!ENTITY manualfillcontextmenu.accesskey "u">
+<!ENTITY addrulecontextmenuitem.label "Een Autofill Forms-regel voor dit veld toevoegen...">
+<!ENTITY addrulecontextmenuitem.accesskey "f">
+<!ENTITY addformasprofilecontextmenuitem.label "Volledig formulier als Autofill Forms-profiel toevoegen...">
+<!ENTITY addformasprofilecontextmenuitem.accesskey "V">
+<!ENTITY options.title "Autofill Forms instellingen">
+<!ENTITY prefpanesimplelabel "Eenvoudig">
+<!ENTITY prefpanemainlabel "Hoofdvenster">
+<!ENTITY prefpaneprofileslabel "Profielen">
+<!ENTITY prefpaneadvancedlabel "Geavanceerd">
+<!ENTITY prefpaneguilabel "Interface">
+<!ENTITY resetallprofiles.label "Alle profielen opnieuw instellen">
+<!ENTITY profile.label "Profiel:">
+<!ENTITY profilesiterule.label "Siteregel">
+<!ENTITY profilename.label "Naam">
+<!ENTITY fieldrulename.label "Naam">
+<!ENTITY fieldrulevalue.label "Waarde">
+<!ENTITY fieldrulesiterule.label "Siteregel">
+<!ENTITY fieldrulefieldrule.label "Veldregel">
+<!ENTITY fieldruleoverwrite.label "Overschrijven">
+<!ENTITY fieldruleenabled.label "Ingeschakeld">
+<!ENTITY apply.label "Toepassen">
+<!ENTITY apply.accesskey "p">
+<!ENTITY add.label "Toevoegen">
+<!ENTITY add.accesskey "v">
+<!ENTITY remove.label "Verwijderen">
+<!ENTITY remove.accesskey "w">
+<!ENTITY moveup.label "Omhoog">
+<!ENTITY moveup.accesskey "h">
+<!ENTITY movedown.label "Omlaag">
+<!ENTITY movedown.accesskey "l">
+<!ENTITY disable.label "Uitschakelen">
+<!ENTITY validate.label "Valideren">
+<!ENTITY validate.accesskey "a">
+<!ENTITY securitycaption.label "Beveiliging">
+<!ENTITY storeencrypted.label "Formulierveldregels versleuteld opslaan">
+<!ENTITY storagelocationcaption.label "Opslaglocatie">
+<!ENTITY useconfigdirectory.label "Formulierveldregels opslaan in een aangepaste map voor instellingen">
+<!ENTITY browsedir.label "Bladeren...">
+<!ENTITY resetdir.label "Reset">
+<!ENTITY opendir.label "Openen">
+<!ENTITY shortcutscaption.label "Sneltoetsen">
+<!ENTITY shortcutfilloutforms.label "Formulieren invullen:">
+<!ENTITY shortcutfilloutandsubmitforms.label "Formulieren invullen en indienen:">
+<!ENTITY shortcutfilloutformsonalltabs.label "Formulieren op alle tabbladen invullen:">
+<!ENTITY shortcutfilloutformsfromprofileselection.label "Formulieren van profielselectie invullen:">
+<!ENTITY shortcutprofileswitcher.label "Profiel wisselen:">
+<!ENTITY shortcutsettings.label "Instellingen:">
+<!ENTITY shortcutdisplayformdetails.label "Formulierdetails weergeven:">
+<!ENTITY shortcutinfo.label "Wijzigingen van de sneltoets worden pas van kracht in een nieuw Firefoxvenster.">
+<!ENTITY mousebuttonscaption.label "Muisknoppen">
+<!ENTITY mousebuttonclick.label "Klik">
+<!ENTITY mouseshortcutinfo.label "Muisknoppen zijn van toepassing op aanklikken van de werkbalkknop of het statusbalkpictogram.">
+<!ENTITY viewcaption.label "Beeld">
+<!ENTITY hidestatusbaricon.label "Statusbalkpictogram verbergen">
+<!ENTITY hidecontextmenuitem.label "Contextmenu-onderdeel verbergen">
+<!ENTITY hideformfieldscontextmenu.label "Contextmenu van formuliervelden verbergen">
+<!ENTITY hidetoolbarbutton.label "Werkbalkknop verbergen">
+<!ENTITY hidetoolbarbuttonmenu.label "Werkbalkknopmenu verbergen">
+<!ENTITY enableconfirmationdialogs.label "Bevestigingsdialogen inschakelen">
+<!ENTITY highlightstylematch.label "CSS stijl voor automatisch ingevulde formuliervelden:">
+<!ENTITY highlightstylenomatch.label "CSS stijl voor niet automatisch ingevulde formuliervelden:">
+<!ENTITY formdetailsstyle.label "CSS-stijl voor formulierdetails:">
+<!ENTITY miscellaneous.label "Diversen">
+<!ENTITY ignoredisabledrulesonautofill.label "Uitgeschakelde regels negeren bij automatisch invullen van formulieren">
+<!ENTITY ignoredisabledfields.label "Ignore disabled fields">
+<!ENTITY focuslastformelementmatch.label "Focussen op laatste gematchte formulierveld">
+<!ENTITY autoselectbestprofile.label "Automatisch het best passende profiel selecteren">
+<!ENTITY matchagainstlabels.label "Regels aanvullend matchen tegen formulierveldlabels">
+<!ENTITY identifylabelsinstrictmode.label "Formulierveldlabels in strikte modus identificeren">
+<!ENTITY matchagainstpositions.label "Regels toestaan formuliervelden te matchen op positie">
+<!ENTITY rememberalternativesindex.label "Index van geselecteerde alternatieven gebruiken voor volgende selecties">
+<!ENTITY placeholderlinebreak.label "Plaatshouder voor regelafbrekingen in tekstvelden:">
+<!ENTITY placeholdertab.label "Plaatshouder voor tabinvoer:">
+<!ENTITY enableglobalprofile.label "Algemeen profiel inschakelen:">
+<!ENTITY formfieldscontextmenu.label "In contextmenu van formuliervelden weergeven:">
+<!ENTITY formfieldscontextmenuitemallprofiles.label "Alle profielen">
+<!ENTITY formfieldscontextmenuitemactiveprofile.label "Actief profiel">
+<!ENTITY profileimportexport.label "Profiel importeren/exporteren">
+<!ENTITY profileimportbutton.label "Profiel importeren...">
+<!ENTITY profileexportbutton.label "Huidig profiel exporteren...">
+<!ENTITY profileexportallbutton.label "Export all Profiles...">
+<!ENTITY formdetails.label "Formulierdetails weergeven">
+<!ENTITY ruleeditorbutton.label "Regel bewerken...">
+<!ENTITY ruleeditor.title "Regel bewerken">
+<!ENTITY ruleeditorinfo.label "De condities zijn als separate voorwaarden (OR relaties) gedefinieerd - er hoeft er maar één te matchen.">
+<!ENTITY ruleeditorcondition.label "Het gezochte tekstgedeelte...">
+<!ENTITY tagsenable.label "Dynamische labels inschakelen">
+<!ENTITY tagsedit.label "Dynamische labels bewerken...">
+<!ENTITY tageditor.title "Dynamische labels bewerken">
+<!ENTITY tagimportexport.label "Dynamic tags Import / Export">
+<!ENTITY tagimportbutton.label "Import Tags...">
+<!ENTITY tagexportbutton.label "Export Tags...">
+<!ENTITY disablealternatives.label "Disable alternatives (always use first match)">
+<!ENTITY callonchangeafterfillingfields.label "Trigger onchange events after filling out fields">

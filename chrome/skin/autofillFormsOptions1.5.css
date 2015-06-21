@@ -1,0 +1,10 @@
+#autofillFormsPrefs radio[pane="autofillFormsPrefPaneProfiles"] {
+	list-style-image: url("chrome://browser/skin/preferences/Options.png");
+	-moz-image-region: rect(0px, 128px, 32px, 96px);
+}
+#autofillFormsPrefs radio[pane="autofillFormsPrefPaneAdvanced"] {
+	-moz-image-region: rect(0px, 160px, 32px, 128px);
+}
+#autofillFormsPrefs radio[pane="autofillFormsPrefPaneGUI"] {
+	-moz-image-region: rect(0px, 192px, 32px, 160px);
+}

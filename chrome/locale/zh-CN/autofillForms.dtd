@@ -1,0 +1,102 @@
+<!ENTITY toolbarbutton.label "Autofill Forms">
+<!ENTITY profilemenuitem.label "身份信息切换">
+<!ENTITY settingsmenuitem.label "设置">
+<!ENTITY helpmenuitem.label "帮助">
+<!ENTITY autofillformscontextmenuitem.label "自动赶写表单">
+<!ENTITY autofillformscontextmenuitem.accesskey "u">
+<!ENTITY manualfillcontextmenu.label "填写该域">
+<!ENTITY manualfillcontextmenu.accesskey "f">
+<!ENTITY addrulecontextmenuitem.label "为此域添加一个Autofill Forms规则">
+<!ENTITY addrulecontextmenuitem.accesskey "f">
+<!ENTITY addformasprofilecontextmenuitem.label "将完整的表单作为 Autofill Forms 的选项文件...">
+<!ENTITY addformasprofilecontextmenuitem.accesskey "C">
+<!ENTITY options.title "Autofill Forms 设置">
+<!ENTITY prefpanesimplelabel "简单">
+<!ENTITY prefpanemainlabel "基本">
+<!ENTITY prefpaneprofileslabel "Profiles">
+<!ENTITY prefpaneadvancedlabel "高级">
+<!ENTITY prefpaneguilabel "界面">
+<!ENTITY resetallprofiles.label "重置所有选项">
+<!ENTITY profile.label "身份信息">
+<!ENTITY profilesiterule.label "Site rule">
+<!ENTITY profilename.label "Name">
+<!ENTITY fieldrulename.label "名称">
+<!ENTITY fieldrulevalue.label "值">
+<!ENTITY fieldrulesiterule.label "站点规则">
+<!ENTITY fieldrulefieldrule.label "填写规则">
+<!ENTITY fieldruleoverwrite.label "改写">
+<!ENTITY fieldruleenabled.label "启动">
+<!ENTITY apply.label "应用">
+<!ENTITY apply.accesskey "p">
+<!ENTITY add.label "添加">
+<!ENTITY add.accesskey "a">
+<!ENTITY remove.label "删除">
+<!ENTITY remove.accesskey "r">
+<!ENTITY moveup.label "向上移动">
+<!ENTITY moveup.accesskey "u">
+<!ENTITY movedown.label "向下移动">
+<!ENTITY movedown.accesskey "d">
+<!ENTITY disable.label "禁用">
+<!ENTITY validate.label "验证">
+<!ENTITY validate.accesskey "v">
+<!ENTITY securitycaption.label "安全">
+<!ENTITY storeencrypted.label "保存加密后的表单填写规则">
+<!ENTITY storagelocationcaption.label "Storage location">
+<!ENTITY useconfigdirectory.label "Store form field rules in a custom config directory">
+<!ENTITY browsedir.label "Browse...">
+<!ENTITY resetdir.label "Reset">
+<!ENTITY opendir.label "Open">
+<!ENTITY shortcutscaption.label "快捷键">
+<!ENTITY shortcutfilloutforms.label "填写表单：">
+<!ENTITY shortcutfilloutandsubmitforms.label "Fill out and submit forms:">
+<!ENTITY shortcutfilloutformsonalltabs.label "Fill out forms on all tabs:">
+<!ENTITY shortcutfilloutformsfromprofileselection.label "Fill out forms from profile selection:">
+<!ENTITY shortcutprofileswitcher.label "身份信息切换：">
+<!ENTITY shortcutsettings.label "设置：">
+<!ENTITY shortcutdisplayformdetails.label "Display Form Details:">
+<!ENTITY shortcutinfo.label "快捷键变更仅在新的Firefox窗口有效">
+<!ENTITY mousebuttonscaption.label "Mouse buttons">
+<!ENTITY mousebuttonclick.label "Click">
+<!ENTITY mouseshortcutinfo.label "Mouse buttons apply to toolbar button or statusbar icon clicks.">
+<!ENTITY viewcaption.label "查看">
+<!ENTITY hidestatusbaricon.label "隐藏状态栏图标">
+<!ENTITY hidecontextmenuitem.label "隐藏右键菜单项目">
+<!ENTITY hideformfieldscontextmenu.label "隐藏表单区域右键菜单">
+<!ENTITY hidetoolbarbutton.label "隐藏工具栏按钮">
+<!ENTITY hidetoolbarbuttonmenu.label "隐藏工具栏按钮菜单">
+<!ENTITY enableconfirmationdialogs.label "启用确认对话框">
+<!ENTITY highlightstylematch.label "自动填写表单域的CSS样式">
+<!ENTITY highlightstylenomatch.label "非自动填写表单域的CSS样式">
+<!ENTITY formdetailsstyle.label "CSS Style for form details:">
+<!ENTITY miscellaneous.label "杂项">
+<!ENTITY ignoredisabledrulesonautofill.label "Ignore disabled rules when filling out forms automatically">
+<!ENTITY ignoredisabledfields.label "Ignore disabled fields">
+<!ENTITY focuslastformelementmatch.label "在最后一个符合的表单域中设置焦点">
+<!ENTITY autoselectbestprofile.label "Automatically select the best matching profile">
+<!ENTITY matchagainstlabels.label "Match rules against form field labels additionally">
+<!ENTITY identifylabelsinstrictmode.label "Identify form field labels in strict mode">
+<!ENTITY matchagainstpositions.label "Allow rules to match form fields by position">
+<!ENTITY rememberalternativesindex.label "将所选的选项作为以后的选择">
+<!ENTITY placeholderlinebreak.label "文本区域换行占位符">
+<!ENTITY placeholdertab.label "Placeholder for tabulator input:">
+<!ENTITY enableglobalprofile.label "启动全局选项">
+<!ENTITY formfieldscontextmenu.label "Show in form fields context menu:">
+<!ENTITY formfieldscontextmenuitemallprofiles.label "All profiles">
+<!ENTITY formfieldscontextmenuitemactiveprofile.label "Active profile">
+<!ENTITY profileimportexport.label "身份信息导入/导出">
+<!ENTITY profileimportbutton.label "导入身份信息...">
+<!ENTITY profileexportbutton.label "导出当前身份信息">
+<!ENTITY profileexportallbutton.label "Export all Profiles...">
+<!ENTITY formdetails.label "显示表单详细情况">
+<!ENTITY ruleeditorbutton.label "规则编辑器...">
+<!ENTITY ruleeditor.title "规则编辑器">
+<!ENTITY ruleeditorinfo.label "这些条件是如同分离（或相关）地联系在一起——他们中只有一个必须匹配">
+<!ENTITY ruleeditorcondition.label "搜索到的字串...">
+<!ENTITY tagsenable.label "启用动态标签">
+<!ENTITY tagsedit.label "编辑动态标签...">
+<!ENTITY tageditor.title "动态标签编辑器">
+<!ENTITY tagimportexport.label "Dynamic tags Import / Export">
+<!ENTITY tagimportbutton.label "Import Tags...">
+<!ENTITY tagexportbutton.label "Export Tags...">
+<!ENTITY disablealternatives.label "Disable alternatives (always use first match)">
+<!ENTITY callonchangeafterfillingfields.label "Trigger onchange events after filling out fields">

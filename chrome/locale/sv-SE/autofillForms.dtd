@@ -1,0 +1,102 @@
+<!ENTITY toolbarbutton.label "Fyll in formulär automatisk">
+<!ENTITY profilemenuitem.label "Byta Profil">
+<!ENTITY settingsmenuitem.label "Inställningar">
+<!ENTITY helpmenuitem.label "Hjälp">
+<!ENTITY autofillformscontextmenuitem.label "Fyll in formulär automatisk">
+<!ENTITY autofillformscontextmenuitem.accesskey "u">
+<!ENTITY manualfillcontextmenu.label "Fyll in detta fält">
+<!ENTITY manualfillcontextmenu.accesskey "f">
+<!ENTITY addrulecontextmenuitem.label "Lägg till en regel för detta fält...">
+<!ENTITY addrulecontextmenuitem.accesskey "r">
+<!ENTITY addformasprofilecontextmenuitem.label "Lägg till färdig formulär som profil">
+<!ENTITY addformasprofilecontextmenuitem.accesskey "p">
+<!ENTITY options.title "Fyll in formulär automatiska inställningar">
+<!ENTITY prefpanesimplelabel "Simpel">
+<!ENTITY prefpanemainlabel "Main">
+<!ENTITY prefpaneprofileslabel "Profiler">
+<!ENTITY prefpaneadvancedlabel "Avancerat">
+<!ENTITY prefpaneguilabel "Gränssnitt">
+<!ENTITY resetallprofiles.label "Ställa om alla profiler">
+<!ENTITY profile.label "Profil:">
+<!ENTITY profilesiterule.label "Hemsida regel">
+<!ENTITY profilename.label "Namn">
+<!ENTITY fieldrulename.label "Namn">
+<!ENTITY fieldrulevalue.label "Värde">
+<!ENTITY fieldrulesiterule.label "Hemsida regel">
+<!ENTITY fieldrulefieldrule.label "Fält regel">
+<!ENTITY fieldruleoverwrite.label "Skriva över">
+<!ENTITY fieldruleenabled.label "Aktiverad">
+<!ENTITY apply.label "Verkställa">
+<!ENTITY apply.accesskey "p">
+<!ENTITY add.label "Lägg till">
+<!ENTITY add.accesskey "a">
+<!ENTITY remove.label "Radera">
+<!ENTITY remove.accesskey "r">
+<!ENTITY moveup.label "Flytta upp">
+<!ENTITY moveup.accesskey "u">
+<!ENTITY movedown.label "Flytta ner">
+<!ENTITY movedown.accesskey "d">
+<!ENTITY disable.label "Inaktivera">
+<!ENTITY validate.label "Validate">
+<!ENTITY validate.accesskey "v">
+<!ENTITY securitycaption.label "Säkerhet">
+<!ENTITY storeencrypted.label "Lagra formulär fält regler krypterat">
+<!ENTITY storagelocationcaption.label "Lagrings plats">
+<!ENTITY useconfigdirectory.label "Store form field rules in a custom config directory">
+<!ENTITY browsedir.label "Bläddra...">
+<!ENTITY resetdir.label "Reset">
+<!ENTITY opendir.label "Öppna">
+<!ENTITY shortcutscaption.label "Tangentbords genvägar">
+<!ENTITY shortcutfilloutforms.label "Fyll in formulär:">
+<!ENTITY shortcutfilloutandsubmitforms.label "Fill out and submit forms:">
+<!ENTITY shortcutfilloutformsonalltabs.label "Fill out forms on all tabs:">
+<!ENTITY shortcutfilloutformsfromprofileselection.label "Fill out forms from profile selection:">
+<!ENTITY shortcutprofileswitcher.label "Byta profil:">
+<!ENTITY shortcutsettings.label "Inställningar:">
+<!ENTITY shortcutdisplayformdetails.label "Display Form Details:">
+<!ENTITY shortcutinfo.label "Tangentbords genvägar ändringar tar endast effekt i en ny Firefox fönster.">
+<!ENTITY mousebuttonscaption.label "Mus knappar">
+<!ENTITY mousebuttonclick.label "Klicka">
+<!ENTITY mouseshortcutinfo.label "Mouse buttons apply to toolbar button or statusbar icon clicks.">
+<!ENTITY viewcaption.label "Visa">
+<!ENTITY hidestatusbaricon.label "Hide statusbar icon">
+<!ENTITY hidecontextmenuitem.label "Hide context menu item">
+<!ENTITY hideformfieldscontextmenu.label "Hide form fields context menu">
+<!ENTITY hidetoolbarbutton.label "Hide toolbar button">
+<!ENTITY hidetoolbarbuttonmenu.label "Hide toolbar button menu">
+<!ENTITY enableconfirmationdialogs.label "Enable confirmation dialogs">
+<!ENTITY highlightstylematch.label "CSS Style for autofilled form fields:">
+<!ENTITY highlightstylenomatch.label "CSS Style for not autofilled form fields:">
+<!ENTITY formdetailsstyle.label "CSS Style for form details:">
+<!ENTITY miscellaneous.label "Övrigt">
+<!ENTITY ignoredisabledrulesonautofill.label "Ignore disabled rules when filling out forms automatically">
+<!ENTITY ignoredisabledfields.label "Ignore disabled fields">
+<!ENTITY focuslastformelementmatch.label "Set focus on last matched form field">
+<!ENTITY autoselectbestprofile.label "Automatically select the best matching profile">
+<!ENTITY matchagainstlabels.label "Match rules also against form field labels">
+<!ENTITY identifylabelsinstrictmode.label "Identify form field labels in strict mode">
+<!ENTITY matchagainstpositions.label "Allow rules to match form fields by position">
+<!ENTITY rememberalternativesindex.label "Use selected alternatives index for subsequent selections">
+<!ENTITY placeholderlinebreak.label "Placeholder for line breaks in textareas:">
+<!ENTITY placeholdertab.label "Placeholder for tabulator input:">
+<!ENTITY enableglobalprofile.label "Aktivera global profil:">
+<!ENTITY formfieldscontextmenu.label "Show in form fields context menu:">
+<!ENTITY formfieldscontextmenuitemallprofiles.label "Alla profiler">
+<!ENTITY formfieldscontextmenuitemactiveprofile.label "Aktivera profil">
+<!ENTITY profileimportexport.label "Profil import/export">
+<!ENTITY profileimportbutton.label "Importera profil...">
+<!ENTITY profileexportbutton.label "Exportera aktuella profil...">
+<!ENTITY profileexportallbutton.label "Export all Profiles...">
+<!ENTITY formdetails.label "Visa formulär detaljer">
+<!ENTITY ruleeditorbutton.label "Regel redigerare...">
+<!ENTITY ruleeditor.title "Regel redigerare">
+<!ENTITY ruleeditorinfo.label "The conditions are linked together as disjunctions (OR relations) - only one of them must match.">
+<!ENTITY ruleeditorcondition.label "The searched string ...">
+<!ENTITY tagsenable.label "Aktivera dynamiska taggar">
+<!ENTITY tagsedit.label "Ändra dynamiska taggar...">
+<!ENTITY tageditor.title "Redigera dynamiska taggar">
+<!ENTITY tagimportexport.label "Dynamic tags Import / Export">
+<!ENTITY tagimportbutton.label "Import Tags...">
+<!ENTITY tagexportbutton.label "Export Tags...">
+<!ENTITY disablealternatives.label "Disable alternatives (always use first match)">
+<!ENTITY callonchangeafterfillingfields.label "Trigger onchange events after filling out fields">

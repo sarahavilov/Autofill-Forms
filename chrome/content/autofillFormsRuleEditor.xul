@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://autofillForms/skin/autofillFormsRuleEditor.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://autofillForms/locale/autofillForms.dtd">
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="autofillFormsRuleEditor"
+	title="&ruleeditor.title;"
+	buttons="accept,cancel,help"
+	ondialogaccept="autofillForms.ruleEditorSave();"
+	ondialogcancel="return true;"
+	ondialoghelp="autofillForms.openHelp('Rule Editor');"
+	persist="screenX screenY width height sizemode"
+	width="370"
+	height="370">
+	<vbox flex="1">
+		<label>&ruleeditorinfo.label;</label>
+		<separator class="thin"/>
+		<label control="ruleElementsList" >&ruleeditorcondition.label;</label>
+		<separator class="thin"/>
+		<richlistbox id="ruleElementsList" flex="1" onkeypress="autofillForms.ruleEditorHandleKeyPress(event)"/>
+		<separator class="thin"/>
+		<hbox>
+			<button id="buttonAddRuleElement" label="&add.label;" accesskey="&add.accesskey;" oncommand="autofillForms.ruleEditorAdd(null, null);"/>
+			<button id="buttonRemoveRuleElement" label="&remove.label;" accesskey="&remove.accesskey;" oncommand="autofillForms.ruleEditorRemove(null);"/>
+		</hbox>
+	</vbox>
+	<separator class="thin"/>
+	<script
+		type="application/x-javascript"
+		src="chrome://autofillForms/content/autofillForms.js"
+	/>
+	<script
+		type="application/x-javascript"
+		src="chrome://autofillForms/content/autofillFormsRuleEditor.js"
+	/>
+	<stringbundleset id="stringbundleset">
+		<stringbundle
+			id="autofillFormsStringBundle"
+			src="chrome://autofillForms/locale/autofillForms.properties"
+		/>
+	</stringbundleset>
+</dialog>

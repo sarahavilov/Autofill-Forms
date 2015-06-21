@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://autofillForms/skin/autofillFormsTagEditor.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://autofillForms/locale/autofillForms.dtd">
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="autofillFormsTagEditor"
+	title="&tageditor.title;"
+	buttons="accept,cancel,help"
+	ondialogaccept="autofillForms.tagEditorSave();"
+	ondialogcancel="return true;"
+	ondialoghelp="autofillForms.openHelp('Dynamic Tags');"
+	persist="screenX screenY width height sizemode"
+	width="525"
+	height="400">
+	<vbox flex="1">
+		<richlistbox id="tagList" flex="1" onkeypress="autofillForms.tagEditorHandleKeyPress(event)"/>
+		<separator class="thin"/>
+		<hbox>
+			<button id="buttonAddTag" label="&add.label;" accesskey="&add.accesskey;" oncommand="autofillForms.tagEditorAdd(null, null);"/>
+			<button id="buttonRemoveTag" label="&remove.label;" accesskey="&remove.accesskey;" oncommand="autofillForms.tagEditorRemove(null);"/>
+			<button id="buttonValidateTagCode" label="&validate.label;" accesskey="&validate.accesskey;" oncommand="autofillForms.tagEditorValidate(null);"/>
+			<textbox id="validationResultTextBox" flex="1"/>
+		</hbox>
+		<separator class="thin"/>
+		<separator class="groove"/>
+		<separator class="thin"/>
+		<groupbox>
+			<caption label="&tagimportexport.label;"/>
+			<hbox>
+				<button label="&tagimportbutton.label;" oncommand="autofillForms.importDynamicTagsFromTagEditor();"/>
+				<button label="&tagexportbutton.label;" oncommand="autofillForms.exportDynamicTagsFromTagEditor();"/>
+				<spacer flex="1"/>
+			</hbox>
+		</groupbox>
+	</vbox>
+	<separator class="thin"/>
+	<script
+		type="application/x-javascript"
+		src="chrome://autofillForms/content/autofillForms.js"
+	/>
+	<script
+		type="application/x-javascript"
+		src="chrome://autofillForms/content/autofillFormsTagEditor.js"
+	/>
+	<stringbundleset id="stringbundleset">
+		<stringbundle
+			id="autofillFormsStringBundle"
+			src="chrome://autofillForms/locale/autofillForms.properties"
+		/>
+	</stringbundleset>
+</dialog>
+

@@ -1,0 +1,13 @@
+toolbar[iconsize="small"] #autofillFormsButton,
+toolbar[iconsize="small"] .autofillFormsButton,
+#autofillFormsButton,
+.autofillFormsButton {
+	list-style-image: url("pencil-small.png");
+}
+
+toolbar[iconsize="small"] #autofillFormsButton:hover:active,
+toolbar[iconsize="small"] .autofillFormsButton:hover:active,
+#autofillFormsButton:hover:active,
+.autofillFormsButton:hover:active {
+	list-style-image: url("pencil-small.png");
+}

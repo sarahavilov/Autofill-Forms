@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://autofillForms/skin/autofillForms.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://autofillForms/locale/autofillForms.dtd">
+<overlay id="autofillForms" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script
+		type="application/x-javascript"
+		src="chrome://autofillForms/content/autofillForms.js"
+	/>
+	<script
+		type="application/x-javascript"
+		src="chrome://autofillForms/content/autofillFormsOverlay.js"
+	/>
+	<stringbundleset id="stringbundleset">
+		<stringbundle
+			id="autofillFormsStringBundle"
+			src="chrome://autofillForms/locale/autofillForms.properties"
+		/>
+	</stringbundleset>
+	<window id="main-window">
+		<popupset id="autofillFormsPopUpSet">
+			<tooltip
+				id="autofillFormsTooltip"
+				onpopupshowing="autofillForms.tooltip(event);"
+				orient="vertical"
+			/>
+			<menupopup id="autofillFormsPopupMenu" position="after_start">
+				<menu
+					id="autofillFormsPopupProfileMenuItem"
+					label="&profilemenuitem.label;"
+					class="menu-iconic autofillFormsProfileIcon">
+					<menupopup onpopupshowing="if(event.target == this) autofillForms.initProfilesPopupMenu(event);"/>
+				</menu>
+				<menuitem
+					id="autofillFormsPopupSettingsMenuItem"
+					label="&settingsmenuitem.label;"
+					class="menuitem-iconic autofillFormsSettingsIcon"
+					oncommand="autofillForms.showDialog('chrome://autofillForms/content/autofillFormsOptions.xul');"
+				/>
+				<menuitem
+					id="autofillFormsPopupHelpMenuItem"
+					label="&helpmenuitem.label;"
+					class="menuitem-iconic autofillFormsHelpIcon"
+					oncommand="autofillForms.openHelp();"
+				/>
+			</menupopup>
+			<menupopup
+				id="autofillFormsProfileSelectionPopup"
+				position="after_start"
+			/>
+		</popupset>
+	</window>
+	<commandset id="mainCommandSet">
+		<command
+			id="autofillForms"
+			oncommand="autofillForms.fillForms();"
+		/>
+		<command
+			id="autofillFormsSubmit"
+			oncommand="autofillForms.fillForms(null, null, true);"
+		/>
+		<command
+			id="autofillFormsAllTabs"
+			oncommand="autofillForms.fillForms(null, null, null, true);"
+		/>
+		<command
+			id="autofillFormsFromProfileSelection"
+			oncommand="autofillForms.profileSelectionFormFillPrompt(event);"
+		/>
+		<command
+			id="autofillFormsProfile"
+			oncommand="autofillForms.showProfileSwitcher(event);"
+		/>
+		<command
+			id="autofillFormsSettings"
+			oncommand="autofillForms.showDialog('chrome://autofillForms/content/autofillFormsOptions.xul');"
+		/>
+		<command
+			id="autofillFormsDisplayFormDetails"
+			oncommand="autofillForms.displayFormDetails();"
+		/>
+	</commandset>
+	<statusbar id="status-bar">
+		<statusbarpanel
+			id="autofillFormsPanelIcon"
+			class="statusbarpanel-menu-iconic autofillFormsIcon"
+			onclick="autofillForms.clickHandler(event);"
+			context="autofillFormsPopupMenu"
+			tooltip="autofillFormsTooltip"
+			hidden="true"
+		/>
+	</statusbar>
+	<toolbarpalette id="BrowserToolbarPalette">
+		<toolbarbutton
+			id="autofillFormsButton"
+			class="toolbarbutton-1 autofillFormsButton"
+			label="&toolbarbutton.label;"
+			tooltip="autofillFormsTooltip"
+			oncommand="if(event.target == this) autofillForms.commandHandler(event);"
+			onclick="autofillForms.clickHandler(event);"
+			context="autofillFormsPopupMenu"
+			type="menu-button">
+			<menupopup id="autofillFormsButtonMenu" position="after_start">
+				<menu
+					id="autofillFormsButtonProfileMenuItem"
+					label="&profilemenuitem.label;"
+					class="menu-iconic autofillFormsProfileIcon">
+					<menupopup onpopupshowing="if(event.target == this) autofillForms.initProfilesPopupMenu(event);"/>
+				</menu>
+				<menuitem
+					id="autofillFormsButtonSettingsMenuItem"
+					label="&settingsmenuitem.label;"
+					class="menuitem-iconic autofillFormsSettingsIcon"
+					oncommand="autofillForms.showDialog('chrome://autofillForms/content/autofillFormsOptions.xul');"
+				/>
+				<menuitem
+					id="autofillFormsButtonHelpMenuItem"
+					label="&helpmenuitem.label;"
+					class="menuitem-iconic autofillFormsHelpIcon"
+					oncommand="autofillForms.openHelp();"
+				/>
+			</menupopup>
+		</toolbarbutton>
+	</toolbarpalette>
+	<popup id="contentAreaContextMenu">
+		<menuseparator
+			id="autofillFormsContextMenuSeparator2"
+			insertafter="context-selectall"
+		/>
+		<menuitem
+			id="autofillFormsDisplayFormDetailsContextMenuItem"
+			label="&formdetails.label;"
+			insertafter="context-selectall"
+			oncommand="autofillForms.displayFormDetails();"
+		/>
+		<menuitem
+			id="autofillFormsAddFormAsProfileContextMenuItem"
+			label="&addformasprofilecontextmenuitem.label;"
+			accesskey="&addformasprofilecontextmenuitem.accesskey;"
+			insertafter="context-selectall"
+			oncommand="autofillForms.addFormAsProfile(event);"
+		/>
+		<menuitem
+			id="autofillFormsAddRuleContextMenuItem"
+			label="&addrulecontextmenuitem.label;"
+			accesskey="&addrulecontextmenuitem.accesskey;"
+			insertafter="context-selectall"
+			oncommand="autofillForms.showDialog('chrome://autofillForms/content/autofillFormsOptions.xul');"
+		/>
+		<menu
+			id="autofillFormsManualFillContextMenu"
+			label="&manualfillcontextmenu.label;"
+			accesskey="&manualfillcontextmenu.accesskey;"
+			insertafter="context-selectall"
+			class="menu-iconic autofillFormsIcon">
+			<menupopup
+				onpopupshowing="if(event.target == this) autofillForms.initManualFillContextMenu(event);"
+			/>
+		</menu>
+		<menuitem
+			id="autofillFormsContextMenuItem"
+			label="&autofillformscontextmenuitem.label;"
+			accesskey="&autofillformscontextmenuitem.accesskey;"
+			insertafter="context-selectall"
+			class="menuitem-iconic autofillFormsIcon"
+			oncommand="autofillForms.fillForms();"
+		/>
+		<menu
+			id="autofillFormsContextMenu"
+			label="&autofillformscontextmenuitem.label;"
+			accesskey="&autofillformscontextmenuitem.accesskey;"
+			insertafter="context-selectall"
+			class="menu-iconic autofillFormsIcon"
+			hidden="true">
+			<menupopup
+				onpopupshowing="autofillForms.prepareProfileSelectionFormFillMenu(this);"
+			/>
+		</menu>
+		<menuseparator
+			id="autofillFormsContextMenuSeparator1"
+			insertafter="context-selectall"
+		/>
+	</popup>
+</overlay>

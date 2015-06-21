@@ -1,0 +1,4 @@
+#autofillFormsPrefs radio[pane="autofillFormsPrefPaneProfiles"] {
+	list-style-image: url("chrome://mozapps/skin/extensions/viewButtons.png");
+	-moz-image-region: rect(0px, 32px, 32px, 0px);
+}

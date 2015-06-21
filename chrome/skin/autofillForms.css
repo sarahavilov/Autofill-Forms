@@ -1,0 +1,59 @@
+#autofillFormsButton,
+.autofillFormsButton {
+  list-style-image: url("pencil.png");
+}
+toolbar[iconsize="small"] #autofillFormsButton,
+toolbar[iconsize="small"] .autofillFormsButton,
+.autofillFormsIcon {
+  list-style-image: url("pencil-small.png");
+}
+#autofillFormsButton[cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #autofillFormsButton {
+  list-style-image: url("pencil-big.png");
+}
+/** Retina Display **/
+@media (min-resolution: 2dppx) {
+  toolbar[iconsize="small"] #autofillFormsButton,
+  toolbar[iconsize="small"] .autofillFormsButton,
+  .autofillFormsIcon {
+    list-style-image: url("pencil-big.png");
+  }
+}
+
+
+.autofillFormsProfileIcon {
+  list-style-image: url("profile-small.png");
+}
+.autofillFormsSettingsIcon {
+  list-style-image: url("settings-small.png");
+}
+.autofillFormsHelpIcon {
+  list-style-image: url("help-small.png");
+}
+
+statusbarpanel.autofillFormsIcon {
+  cursor: pointer;
+}
+
+#autofillFormsTooltipCurrentProfile {
+  margin-bottom:10px;
+}
+#autofillFormsTooltipCurrentProfileCaption {
+}
+#autofillFormsTooltipCurrentProfileLabel {
+  font-weight: bold;
+}
+#autofillFormsTooltipGrid {
+}
+.autofillFormsTooltipGridHeader {
+  font-weight:bold;
+  margin-bottom:5px;
+}
+.autofillFormsTooltipGridCommand {
+}
+.autofillFormsTooltipGridMouseButton {
+  font-style:italic;
+}
+.autofillFormsTooltipGridKeyboardShortcut {
+  font-family:monospace;
+}

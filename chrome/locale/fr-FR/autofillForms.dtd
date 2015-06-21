@@ -1,0 +1,102 @@
+<!ENTITY toolbarbutton.label "Autofill Forms">
+<!ENTITY profilemenuitem.label "Changement de profil">
+<!ENTITY settingsmenuitem.label "Paramètres">
+<!ENTITY helpmenuitem.label "Aide">
+<!ENTITY autofillformscontextmenuitem.label "Autofill Forms">
+<!ENTITY autofillformscontextmenuitem.accesskey "u">
+<!ENTITY manualfillcontextmenu.label "Remplir ce champ">
+<!ENTITY manualfillcontextmenu.accesskey "r">
+<!ENTITY addrulecontextmenuitem.label "Ajouter une règle Autofill Forms pour ce champ…">
+<!ENTITY addrulecontextmenuitem.accesskey "f">
+<!ENTITY addformasprofilecontextmenuitem.label "Ajouter un formulaire complété en tant que profil d&apos;Autofill Forms…">
+<!ENTITY addformasprofilecontextmenuitem.accesskey "c">
+<!ENTITY options.title "Options de Autofill Forms">
+<!ENTITY prefpanesimplelabel "Simple">
+<!ENTITY prefpanemainlabel "Général">
+<!ENTITY prefpaneprofileslabel "Profils">
+<!ENTITY prefpaneadvancedlabel "Avancé">
+<!ENTITY prefpaneguilabel "Interface">
+<!ENTITY resetallprofiles.label "Réinitialiser tous les profils">
+<!ENTITY profile.label "Profil :">
+<!ENTITY profilesiterule.label "Règle du site">
+<!ENTITY profilename.label "Nom">
+<!ENTITY fieldrulename.label "Nom">
+<!ENTITY fieldrulevalue.label "Valeur">
+<!ENTITY fieldrulesiterule.label "Site">
+<!ENTITY fieldrulefieldrule.label "Champ">
+<!ENTITY fieldruleoverwrite.label "Écraser">
+<!ENTITY fieldruleenabled.label "Activé">
+<!ENTITY apply.label "Appliquer">
+<!ENTITY apply.accesskey "p">
+<!ENTITY add.label "Ajouter">
+<!ENTITY add.accesskey "a">
+<!ENTITY remove.label "Supprimer">
+<!ENTITY remove.accesskey "r">
+<!ENTITY moveup.label "Monter">
+<!ENTITY moveup.accesskey "o">
+<!ENTITY movedown.label "Descendre">
+<!ENTITY movedown.accesskey "e">
+<!ENTITY disable.label "Désactiver">
+<!ENTITY validate.label "Valider">
+<!ENTITY validate.accesskey "v">
+<!ENTITY securitycaption.label "Sécurité">
+<!ENTITY storeencrypted.label "Chiffrer les règles de filtration stockées">
+<!ENTITY storagelocationcaption.label "Emplacement de stockage">
+<!ENTITY useconfigdirectory.label "Store form field rules in a custom config directory">
+<!ENTITY browsedir.label "Naviguer…">
+<!ENTITY resetdir.label "Réinitialiser">
+<!ENTITY opendir.label "Ouvrir">
+<!ENTITY shortcutscaption.label "Raccourcis clavier">
+<!ENTITY shortcutfilloutforms.label "Remplir les formulaires :">
+<!ENTITY shortcutfilloutandsubmitforms.label "Fill out and submit forms:">
+<!ENTITY shortcutfilloutformsonalltabs.label "Fill out forms on all tabs:">
+<!ENTITY shortcutfilloutformsfromprofileselection.label "Fill out forms from profile selection:">
+<!ENTITY shortcutprofileswitcher.label "Changement de profil :">
+<!ENTITY shortcutsettings.label "Paramètres :">
+<!ENTITY shortcutdisplayformdetails.label "Affichage des détails du formulaire :">
+<!ENTITY shortcutinfo.label "Toute modification de raccourci clavier ne prendra effet que dans une nouvelle fenêtre de Firefox.">
+<!ENTITY mousebuttonscaption.label "Boutons de la souris">
+<!ENTITY mousebuttonclick.label "Clic">
+<!ENTITY mouseshortcutinfo.label "Mouse buttons apply to toolbar button or statusbar icon clicks.">
+<!ENTITY viewcaption.label "Affichage">
+<!ENTITY hidestatusbaricon.label "Cacher l&apos;icône dans la barre d&apos;état">
+<!ENTITY hidecontextmenuitem.label "Cacher l&apos;élément du menu contextuel">
+<!ENTITY hideformfieldscontextmenu.label "Cacher le menu contextuel des champs de formulaire">
+<!ENTITY hidetoolbarbutton.label "Masquer le bouton de la barre d&apos;outils">
+<!ENTITY hidetoolbarbuttonmenu.label "Masquer le menu du bouton de la barre d&apos;outils">
+<!ENTITY enableconfirmationdialogs.label "Activer les fenêtres de confirmation">
+<!ENTITY highlightstylematch.label "Feuille de style pour les champs remplis automatiquement :">
+<!ENTITY highlightstylenomatch.label "Feuille de style pour les champs non remplis automatiquement :">
+<!ENTITY formdetailsstyle.label "Feuille de style pour les détails du formulaire :">
+<!ENTITY miscellaneous.label "Divers">
+<!ENTITY ignoredisabledrulesonautofill.label "Ignore disabled rules when filling out forms automatically">
+<!ENTITY ignoredisabledfields.label "Ignore disabled fields">
+<!ENTITY focuslastformelementmatch.label "Placer le curseur dans le dernier champ rempli">
+<!ENTITY autoselectbestprofile.label "Sélectionner automatiquement le profil correspondant le mieux">
+<!ENTITY matchagainstlabels.label "Faire correspondre les règles avec les noms des champs supplémentaires du formulaire">
+<!ENTITY identifylabelsinstrictmode.label "Identify form field labels in strict mode">
+<!ENTITY matchagainstpositions.label "Allow rules to match form fields by position">
+<!ENTITY rememberalternativesindex.label "Utiliser le système des alternatives, pour des ensembles de valeurs">
+<!ENTITY placeholderlinebreak.label "Balise correspondant aux sauts de ligne dans les zones de texte :">
+<!ENTITY placeholdertab.label "Placeholder for tabulator input:">
+<!ENTITY enableglobalprofile.label "Activer le profil global :">
+<!ENTITY formfieldscontextmenu.label "Show in form fields context menu:">
+<!ENTITY formfieldscontextmenuitemallprofiles.label "Tous les profils">
+<!ENTITY formfieldscontextmenuitemactiveprofile.label "Profil actif">
+<!ENTITY profileimportexport.label "Import / export de profil">
+<!ENTITY profileimportbutton.label "Importer des profils…">
+<!ENTITY profileexportbutton.label "Exporter le profil en cours…">
+<!ENTITY profileexportallbutton.label "Exporter tous les Profils…">
+<!ENTITY formdetails.label "Détails du formulaire">
+<!ENTITY ruleeditorbutton.label "Éditeur de règles…">
+<!ENTITY ruleeditor.title "Éditeur de règles">
+<!ENTITY ruleeditorinfo.label "Les conditions sont liées entre elles par disjonction (relation « ou ») : au moins une d&apos;entre elles doit correspondre.">
+<!ENTITY ruleeditorcondition.label "La chaîne recherchée…">
+<!ENTITY tagsenable.label "Activer les balises dynamiques">
+<!ENTITY tagsedit.label "Éditer les balises dynamiques…">
+<!ENTITY tageditor.title "Éditeur de balises dynamiques">
+<!ENTITY tagimportexport.label "Import / Export de balises dynamiques">
+<!ENTITY tagimportbutton.label "Importer les balises...">
+<!ENTITY tagexportbutton.label "Exporter les balises...">
+<!ENTITY disablealternatives.label "Désactiver les alternatives (utiliser la première cible)">
+<!ENTITY callonchangeafterfillingfields.label "Trigger onchange events after filling out fields">

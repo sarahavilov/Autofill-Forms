@@ -1,0 +1,620 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://autofillForms/skin/autofillFormsOptions.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://autofillForms/locale/autofillForms.dtd">
+<prefwindow xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="autofillFormsPrefs"
+	title="&options.title;"
+	width="650"
+	buttons="accept,cancel,help,extra1"
+	buttonlabelextra1="&resetallprofiles.label;"
+	ondialogextra1="autofillForms.resetAllProfiles();"
+	ondialoghelp="autofillForms.openHelp(event.target.currentPane.helpTopic);"
+	persist="screenX screenY width height sizemode">
+	<prefpane
+		id="autofillFormsPrefPaneSimple"
+		label="&prefpanesimplelabel;"
+		flex="1"
+		helpTopic="Simple Editor">
+		<preferences>
+		</preferences>
+		<vbox flex="1">
+			<hbox align="center">
+				<menulist id="simpleInterfaceProfileMenuList" oncommand="autofillForms.setProfileIndex(this.selectedIndex);"/>
+				<spacer flex="1"/>
+			</hbox>
+			<separator class="thin"/>
+			<vbox flex="1" id="simpleInterfaceRowsContainer" style="overflow:auto;max-height:450px;">
+				<grid>
+					<columns>
+						<column/>
+						<column flex="1"/>
+					</columns>
+					<rows id="simpleInterfaceRows"></rows>
+				</grid>
+			</vbox>
+		</vbox>
+	</prefpane>
+	<prefpane
+		id="autofillFormsPrefPaneProfiles"
+		label="&prefpaneprofileslabel;"
+		flex="1"
+		helpTopic="Profiles">
+		<preferences>
+			<preference id="autoSelectBestProfile" 	name="extensions.autofillForms@blueimp.net.autoSelectBestProfile" 		type="bool"/>
+			<preference id="enableGlobalProfile" 	name="extensions.autofillForms@blueimp.net.enableGlobalProfile" 		type="bool"/>
+		</preferences>
+		<tabbox flex="1">
+			<tabs>
+				<tab label="&prefpaneprofileslabel;"/>
+				<tab label="&prefpaneadvancedlabel;"/>
+			</tabs>
+			<tabpanels flex="1">
+				<vbox flex="1">
+					<grid flex="1">
+						<rows>
+							<row align="center" flex="1"/>
+							<separator class="thin"/>
+							<row align="center"/>
+						</rows>
+						<columns>
+							<column flex="1">
+								<tree id="profilesTree" seltype="single" flex="1" enableColumnDrag="true" onkeypress="autofillForms.profilesTreeHandleKeyPress(event)" onselect="autofillForms.selectedProfile(event);">
+									<treecols>
+										<treecol id="profilesTreeColName" label="&profilename.label;" flex="1" persist="width ordinal hidden" onclick="autofillForms.sortProfiles(event);"/>
+										<splitter class="tree-splitter"/>
+										<treecol id="profilesTreeColSiteRule" label="&profilesiterule.label;" flex="1" persist="width ordinal hidden" hidden="false" onclick="autofillForms.sortProfiles(event);"/>
+									</treecols>
+									<treechildren id="profilesTreeChildren" />
+								</tree>
+								<grid>
+									<columns>
+										<column/>
+										<column flex="1"/>
+									</columns>
+									<rows>
+										<row align="center">
+											<label value="&profilename.label;:"/>
+											<textbox id="profileLabelTextBox" flex="1"/>
+										</row>
+										<row align="center">
+											<label value="&profilesiterule.label;:"/>
+											<textbox id="profileSiteRuleTextBox2" flex="1" onchange="autofillForms.changeProfileSiteRule(this.value);"/>
+										</row>
+									</rows>
+								</grid>
+							</column>
+							<column>
+								<vbox>
+									<button align="left" id="buttonMoveUpProfile" class="move up" disabled="true" label="&moveup.label;" accesskey="&moveup.accesskey;" oncommand="autofillForms.moveUpProfile(event);"/>			
+									<button align="left" id="buttonMoveDownProfile" class="move down" disabled="true" label="&movedown.label;" accesskey="&movedown.accesskey;" oncommand="autofillForms.moveDownProfile(event);"/>
+									<button label="&add.label;" accesskey="&add.accesskey;" oncommand="autofillForms.addProfile(document.getElementById('profileLabelTextBox').value);"/>
+									<button label="&remove.label;" accesskey="&remove.accesskey;" oncommand="autofillForms.removeProfile(event);"/>
+								</vbox>
+								<vbox>
+									<button id="buttonApplyProfile" label="&apply.label;" oncommand="autofillForms.changeProfileLabel(document.getElementById('profileLabelTextBox').value);"/>							
+									<button label="&ruleeditorbutton.label;" oncommand="autofillForms.showDialog('chrome://autofillForms/content/autofillFormsRuleEditor.xul', document.getElementById('profileSiteRuleTextBox2'));"/>							
+								</vbox>
+							</column>
+						</columns>
+					</grid>
+					<separator class="thin"/>
+					<separator class="groove"/>
+					<separator class="thin"/>
+					<groupbox>
+						<caption label="&profileimportexport.label;"/>
+						<hbox>
+							<button label="&profileimportbutton.label;" oncommand="autofillForms.importProfile();"/>
+							<button label="&profileexportallbutton.label;" oncommand="autofillForms.exportAllProfiles();"/>
+							<button label="&profileexportbutton.label;" oncommand="autofillForms.exportProfile();"/>
+							<spacer flex="1"/>
+						</hbox>
+					</groupbox>
+				</vbox>
+				<vbox flex="1" style="">
+					<checkbox label="&autoselectbestprofile.label;" preference="autoSelectBestProfile"/>
+					<separator class="thin"/>
+					<hbox align="center">
+						<checkbox label="&enableglobalprofile.label;" preference="enableGlobalProfile"/>
+						<spacer flex="1"/>
+						<menulist id="globalProfileMenuList" oncommand="autofillForms.setGlobalProfileIndex(this.selectedIndex);"/>
+					</hbox>
+					<separator class="thin"/>
+					<hbox align="center">
+						<label control="contextMenuProfileMenuList" value="&formfieldscontextmenu.label;"/>
+						<spacer flex="1"/>
+						<menulist id="contextMenuProfileMenuList" oncommand="autofillForms.setFormFieldsContextMenuProfileIndex(this.selectedIndex-3);">
+							<menupopup>
+								<menuitem label="&formfieldscontextmenuitemallprofiles.label;"/>
+								<menuitem label="&formfieldscontextmenuitemactiveprofile.label;"/>
+								<menuseparator/>
+							</menupopup>
+						</menulist>
+					</hbox>
+				</vbox>
+			</tabpanels>
+		</tabbox>
+	</prefpane>
+	<prefpane
+		id="autofillFormsPrefPaneMain"
+		label="&prefpanemainlabel;"
+		flex="1"
+		helpTopic="Advanced Editor">
+		<preferences>
+		</preferences>
+		<vbox flex="1" id="autofillFormsPrefPaneMainBox" style="">
+			<grid>
+				<columns>
+					<column/>
+					<column flex="1"/>
+				</columns>
+				<rows>
+					<row align="center">
+						<label value="&profile.label;"/>
+						<hbox align="center">
+						<menulist id="profilesMenuList" editable="true" flex="1" oncommand="autofillForms.setProfileIndex(this.selectedIndex);"/>
+							<button id="buttonApplyProfile" label="&apply.label;" oncommand="autofillForms.changeProfileLabel(document.getElementById('profilesMenuList').inputField.value);"/>
+							<button id="buttonAddProfile" label="&add.label;" oncommand="autofillForms.addProfile(document.getElementById('profilesMenuList').inputField.value);"/>
+							<button id="buttonRemoveProfile" label="&remove.label;" oncommand="autofillForms.removeProfile(event);"/>
+						</hbox>
+					</row>
+					<row align="center">
+						<label value="&profilesiterule.label;:"/>
+						<hbox align="center">
+							<textbox id="profileSiteRuleTextBox" flex="1" onchange="autofillForms.changeProfileSiteRule(this.value);"/>
+							<button label="&ruleeditorbutton.label;" oncommand="autofillForms.showDialog('chrome://autofillForms/content/autofillFormsRuleEditor.xul', document.getElementById('profileSiteRuleTextBox'));"/>
+						</hbox>
+					</row>
+				</rows>
+			</grid>
+			<separator class="thin"/>
+			<tree id="fieldRulesTree" seltype="multiple" flex="1" editable="true" enableColumnDrag="true" onkeypress="autofillForms.handleKeyPress(event)" onselect="autofillForms.selectedFieldRule(event);">
+				<treecols>
+					<treecol id="fieldRuleName" label="&fieldrulename.label;" flex="1" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
+					<splitter class="tree-splitter"/>
+					<treecol id="fieldRuleValue" label="&fieldrulevalue.label;" flex="2" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
+					<splitter class="tree-splitter"/>
+					<treecol id="fieldRuleFieldRule" hidden="true" label="&fieldrulefieldrule.label;" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
+					<splitter class="tree-splitter"/>
+					<treecol id="fieldRuleSiteRule" hidden="true" label="&fieldrulesiterule.label;" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
+					<splitter class="tree-splitter"/>
+					<treecol id="fieldRuleOverwrite" label="&fieldruleoverwrite.label;" type="checkbox" editable="true" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
+					<splitter class="tree-splitter"/>
+					<treecol id="fieldRuleEnabled" label="&fieldruleenabled.label;" type="checkbox" editable="true" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
+				</treecols>
+				<treechildren id="fieldRulesTreeChildren" />
+			</tree>
+			<separator class="thin"/>
+			<grid>
+				<columns>
+					<column/>
+					<column flex="1"/>
+					<column/>
+				</columns>
+				<rows>
+					<row align="center">
+						<label control="fieldRuleNameTextBox" value="&fieldrulename.label;:"/>	
+						<textbox id="fieldRuleNameTextBox" onchange="autofillForms.applyFieldRule(event);"/>
+						<button align="left" id="buttonMoveUpFieldRule" class="move up" disabled="true" label="&moveup.label;" accesskey="&moveup.accesskey;" oncommand="autofillForms.moveUpFieldRule(event);"/>					
+					</row>
+					<row align="center">
+						<label control="fieldRuleValueTextBox" value="&fieldrulevalue.label;:"/>
+						<textbox id="fieldRuleValueTextBox" onchange="autofillForms.applyFieldRule(event);" oninput="this.value=autofillForms.replaceControlCharacters(this.value)" newlines="pasteintact"/>
+						<button align="left" id="buttonMoveDownFieldRule" class="move down" disabled="true" label="&movedown.label;" accesskey="&movedown.accesskey;" oncommand="autofillForms.moveDownFieldRule(event);"/>
+					</row>
+					<row align="center">
+						<label control="fieldRuleFieldRuleTextBox" value="&fieldrulefieldrule.label;:"/>
+						<textbox id="fieldRuleFieldRuleTextBox" onchange="autofillForms.applyFieldRule(event);"/>
+						<button id="buttonEditFieldRule" label="&ruleeditorbutton.label;" oncommand="autofillForms.showDialog('chrome://autofillForms/content/autofillFormsRuleEditor.xul', document.getElementById('fieldRuleFieldRuleTextBox'));"/>
+					</row>
+					<row align="center">
+						<label control="fieldRuleSiteRuleTextBox" value="&fieldrulesiterule.label;:"/>
+						<textbox id="fieldRuleSiteRuleTextBox" onchange="autofillForms.applyFieldRule(event);"/>
+						<button id="buttonEditSiteRule" label="&ruleeditorbutton.label;" oncommand="autofillForms.showDialog('chrome://autofillForms/content/autofillFormsRuleEditor.xul', document.getElementById('fieldRuleSiteRuleTextBox'));"/>
+					</row>
+					<row align="center">
+						<spacer/>
+						<hbox>
+							<button id="buttonAddFieldRule" label="&add.label;" accesskey="&add.accesskey;" oncommand="autofillForms.addFieldRule(event);"/>
+							<button id="buttonRemoveFieldRule" disabled="true" label="&remove.label;" accesskey="&remove.accesskey;" oncommand="autofillForms.removeFieldRule(event);"/>
+						</hbox>
+						<spacer/>
+					</row>
+				</rows>
+			</grid>
+		</vbox>
+	</prefpane>
+	<prefpane
+		id="autofillFormsPrefPaneAdvanced"
+		label="&prefpaneadvancedlabel;"
+		flex="1"
+		helpTopic="Settings">
+		<preferences>
+			<preference id="storeEncrypted" 				name="extensions.autofillForms@blueimp.net.storeEncrypted" 					type="bool"/>
+			<preference id="enableDynamicTags" 				name="extensions.autofillForms@blueimp.net.enableDynamicTags" 				type="bool"/>
+			<preference id="ignoreDisabledRulesOnAutofill" 	name="extensions.autofillForms@blueimp.net.ignoreDisabledRulesOnAutofill" 	type="bool"/>
+			<preference id="ignoreDisabledFields" 	name="extensions.autofillForms@blueimp.net.ignoreDisabledFields" 	type="bool"/>
+			<preference id="focusLastFormElementMatch" 		name="extensions.autofillForms@blueimp.net.focusLastFormElementMatch" 		type="bool"/>
+			<preference id="matchAgainstLabels" 			name="extensions.autofillForms@blueimp.net.matchAgainstLabels" 				type="bool"/>
+			<preference id="labelsStrictMode" 				name="extensions.autofillForms@blueimp.net.labelsStrictMode" 				type="bool"/>
+			<preference id="disableAlternatives" 			name="extensions.autofillForms@blueimp.net.disableAlternatives" 			type="bool"/>
+			<preference id="rememberAlternativesIndex" 		name="extensions.autofillForms@blueimp.net.rememberAlternativesIndex" 		type="bool"/>
+			<preference id="matchAgainstPositions" 			name="extensions.autofillForms@blueimp.net.matchAgainstPositions" 			type="bool"/>
+			<preference id="callOnChangeAfterFillingFields"	name="extensions.autofillForms@blueimp.net.callOnChangeAfterFillingFields" 	type="bool"/>
+			<preference id="positionsIdentifier" 			name="extensions.autofillForms@blueimp.net.positionsIdentifier" 			type="unichar"/>
+			<preference id="placeholderLineBreak" 			name="extensions.autofillForms@blueimp.net.placeholderLineBreak" 			type="unichar"/>
+			<preference id="placeholderTab" 				name="extensions.autofillForms@blueimp.net.placeholderTab" 					type="unichar"/>
+			<preference id="useConfigDirectory" 			name="extensions.autofillForms@blueimp.net.useConfigDirectory" 				type="bool"/>
+		</preferences>
+		<tabbox flex="1">
+			<tabs>
+				<tab label="&prefpanemainlabel;"/>
+				<tab label="&prefpaneadvancedlabel;"/>
+			</tabs>
+			<tabpanels flex="1">
+				<vbox flex="1">
+					<groupbox>
+						<caption label="&securitycaption.label;"/>
+						<checkbox label="&storeencrypted.label;" preference="storeEncrypted"/>
+					</groupbox>
+					<separator class="thin"/>
+					<groupbox flex="1">
+						<caption label="&miscellaneous.label;"/>
+					<vbox  flex="1" style="overflow:auto;">
+						<hbox align="center">
+							<checkbox label="&tagsenable.label;" preference="enableDynamicTags"/>
+							<spacer flex="1"/>
+							<button id="buttonEditTags" label="&tagsedit.label;" oncommand="autofillForms.showDialog('chrome://autofillForms/content/autofillFormsTagEditor.xul', null);"/>
+						</hbox>
+						<checkbox label="&ignoredisabledrulesonautofill.label;" preference="ignoreDisabledRulesOnAutofill"/>
+						<checkbox label="&ignoredisabledfields.label;" preference="ignoreDisabledFields"/>
+						<checkbox label="&matchagainstlabels.label;" preference="matchAgainstLabels"/>
+						<checkbox label="&identifylabelsinstrictmode.label;" preference="labelsStrictMode"/>
+						<checkbox label="&disablealternatives.label;" preference="disableAlternatives"/>
+						<checkbox label="&rememberalternativesindex.label;" preference="rememberAlternativesIndex"/>
+						<checkbox label="&focuslastformelementmatch.label;" preference="focusLastFormElementMatch"/>
+						<checkbox label="&callonchangeafterfillingfields.label;" preference="callOnChangeAfterFillingFields"/>
+						<hbox align="center">
+							<checkbox label="&matchagainstpositions.label;" preference="matchAgainstPositions"/>
+							<spacer flex="1"/>
+							<textbox id="positionsIdentifierTextbox" preference="positionsIdentifier" class="placeholderTextbox"/>
+						</hbox>
+						<hbox align="center">
+							<label control="placeholderLineBreakTextbox" value="&placeholderlinebreak.label;"/>
+							<spacer flex="1"/>
+							<textbox id="placeholderLineBreakTextbox" preference="placeholderLineBreak" class="placeholderTextbox"/>
+						</hbox>
+						<hbox align="center">
+							<label control="placeholderTabTextbox" value="&placeholdertab.label;"/>
+							<spacer flex="1"/>
+							<textbox id="placeholderTabTextbox" preference="placeholderTab" class="placeholderTextbox"/>
+						</hbox>
+				</vbox>
+					</groupbox>
+					<separator class="thin"/>
+					<groupbox>
+						<caption label="&tagimportexport.label;"/>
+						<hbox>
+							<button label="&tagimportbutton.label;" oncommand="autofillForms.importDynamicTagsFromSettings();"/>
+							<button label="&tagexportbutton.label;" oncommand="autofillForms.exportDynamicTagsFromSettings();"/>
+							<spacer flex="1"/>
+						</hbox>
+					</groupbox>
+				</vbox>
+				<vbox flex="1">
+					<groupbox>
+						<caption label="&storagelocationcaption.label;"/>
+						<checkbox label="&useconfigdirectory.label;" preference="useConfigDirectory"/>
+						<hbox>
+							<textbox id="configDirectoryTextBox" readonly="true" flex="1" />
+							<button	label="&browsedir.label;" icon="open" oncommand="autofillForms.setConfigDirectory(document.getElementById('configDirectoryTextBox'));"/>
+							<button	label="&resetdir.label;" icon="clear" oncommand="autofillForms.resetConfigDirectory(document.getElementById('configDirectoryTextBox'));"/>
+						</hbox>
+						<hbox>
+							<button	label="&opendir.label;" icon="open" oncommand="autofillForms.openConfigDirectory();"/>
+							<spacer flex="1"/>
+						</hbox>
+					</groupbox>
+				</vbox>
+			</tabpanels>
+		</tabbox>
+	</prefpane>
+	<prefpane
+		id="autofillFormsPrefPaneGUI"
+		label="&prefpaneguilabel;"
+		flex="1"
+		helpTopic="Interface">
+		<preferences>
+			<preference id="hideStatusbarIcon" 			name="extensions.autofillForms@blueimp.net.hideStatusbarIcon" 			type="bool"/>
+			<preference id="hideContextMenuItem" 		name="extensions.autofillForms@blueimp.net.hideContextMenuItem" 		type="bool"/>
+			<preference id="hideFormFieldsContextMenu" 	name="extensions.autofillForms@blueimp.net.hideFormFieldsContextMenu" 	type="bool"/>
+			<preference id="hideToolbarButton"			name="extensions.autofillForms@blueimp.net.hideToolbarButton"			type="bool"/>
+			<preference id="hideToolbarButtonMenu"		name="extensions.autofillForms@blueimp.net.hideToolbarButtonMenu"		type="bool"/>
+			<preference id="enableConfirmationDialogs" 	name="extensions.autofillForms@blueimp.net.enableConfirmationDialogs"	type="bool"/>
+			<preference id="highlightStyleMatch" 		name="extensions.autofillForms@blueimp.net.highlightStyleMatch"			type="unichar"/>
+			<preference id="highlightStyleNoMatch" 		name="extensions.autofillForms@blueimp.net.highlightStyleNoMatch" 		type="unichar"/>
+			<preference id="formDetailsStyle" 			name="extensions.autofillForms@blueimp.net.formDetailsStyle" 			type="unichar"/>
+		</preferences>
+		<tabbox flex="1">
+			<tabs>
+				<tab label="&viewcaption.label;"/>
+				<tab label="&shortcutscaption.label;"/>
+				<tab label="&mousebuttonscaption.label;"/>
+			</tabs>
+			<tabpanels flex="1">
+				<vbox flex="1" style="">
+					<checkbox label="&hidetoolbarbutton.label;" preference="hideToolbarButton"/>
+					<checkbox label="&hidetoolbarbuttonmenu.label;" preference="hideToolbarButtonMenu"/>
+					<checkbox label="&hidestatusbaricon.label;" preference="hideStatusbarIcon"/>
+					<checkbox label="&hidecontextmenuitem.label;" preference="hideContextMenuItem"/>
+					<checkbox label="&hideformfieldscontextmenu.label;" preference="hideFormFieldsContextMenu"/>
+					<checkbox label="&enableconfirmationdialogs.label;" preference="enableConfirmationDialogs"/>
+					<separator class="thin"/>
+					<grid>
+						<columns>
+							<column/>
+							<column flex="1" minwidth="200"/>
+						</columns>
+						<rows>
+							<row align="center">
+								<label control="highlightStyleMatchTextbox" value="&highlightstylematch.label;"/>
+								<textbox id="highlightStyleMatchTextbox" preference="highlightStyleMatch"/>
+							</row>
+							<row align="center">
+								<label control="highlightStyleNoMatchTextbox" value="&highlightstylenomatch.label;"/>
+								<textbox id="highlightStyleNoMatchTextbox" preference="highlightStyleNoMatch"/>
+							</row>
+							<row align="center">
+								<label control="formDetailsStyle" value="&formdetailsstyle.label;"/>
+								<textbox id="formDetailsStyle" preference="formDetailsStyle"/>
+							</row>
+						</rows>
+					</grid>
+				</vbox>
+				<vbox flex="1" style="">
+					<grid>
+						<columns>
+							<column class="shortCutsLabelColumn"/>
+							<column class="shortCutsKeyColumn" flex="1"/>
+							<column/>
+						</columns>
+						<rows>
+							<row align="center">
+								<description control="shortcut">&shortcutfilloutforms.label;</description>
+								<textbox
+									id="shortcut"
+									class="shortcutTextbox"
+									readonly="true"
+									onkeypress="autofillForms.applyShortcut(event, 'shortcut');"
+								/>
+								<button
+									label="&disable.label;"
+									oncommand="autofillForms.disableShortcut(event, 'shortcut');"
+								/>
+							</row>
+							<row align="center">
+								<description control="shortcutSubmit">&shortcutfilloutandsubmitforms.label;</description>
+								<textbox
+									id="shortcutSubmit"
+									class="shortcutTextbox"
+									readonly="true"
+									onkeypress="autofillForms.applyShortcut(event, 'shortcutSubmit');"
+								/>
+								<button
+									label="&disable.label;"
+									oncommand="autofillForms.disableShortcut(event, 'shortcutSubmit');"
+								/>
+							</row>
+							<row align="center">
+								<description control="shortcutAllTabs">&shortcutfilloutformsonalltabs.label;</description>
+								<textbox
+									id="shortcutAllTabs"
+									class="shortcutTextbox"
+									readonly="true"
+									onkeypress="autofillForms.applyShortcut(event, 'shortcutAllTabs');"
+								/>
+								<button
+									label="&disable.label;"
+									oncommand="autofillForms.disableShortcut(event, 'shortcutAllTabs');"
+								/>
+							</row>
+							<row align="center">
+								<description control="shortcutFromProfileSelection">&shortcutfilloutformsfromprofileselection.label;</description>
+								<textbox
+									id="shortcutFromProfileSelection"
+									class="shortcutTextbox"
+									readonly="true"
+									onkeypress="autofillForms.applyShortcut(event, 'shortcutFromProfileSelection');"
+								/>
+								<button
+									label="&disable.label;"
+									oncommand="autofillForms.disableShortcut(event, 'shortcutFromProfileSelection');"
+								/>
+							</row>
+							<row align="center">
+								<description control="shortcutProfile">&shortcutprofileswitcher.label;</description>
+								<textbox
+									id="shortcutProfile"
+									class="shortcutTextbox"
+									readonly="true"
+									onkeypress="autofillForms.applyShortcut(event, 'shortcutProfile');"
+								/>
+								<button
+									label="&disable.label;"
+									oncommand="autofillForms.disableShortcut(event, 'shortcutProfile');"
+								/>
+							</row>
+							<row align="center">
+								<description control="shortcutSettings">&shortcutsettings.label;</description>
+								<textbox
+									id="shortcutSettings"
+									class="shortcutTextbox"
+									readonly="true"
+									onkeypress="autofillForms.applyShortcut(event, 'shortcutSettings');"
+								/>
+								<button
+									label="&disable.label;"
+									oncommand="autofillForms.disableShortcut(event, 'shortcutSettings');"
+								/>
+							</row>
+							<row align="center">
+								<description control="shortcutDisplayFormDetails">&shortcutdisplayformdetails.label;</description>
+								<textbox
+									id="shortcutDisplayFormDetails"
+									class="shortcutTextbox"
+									readonly="true"
+									onkeypress="autofillForms.applyShortcut(event, 'shortcutDisplayFormDetails');"
+								/>
+								<button
+									label="&disable.label;"
+									oncommand="autofillForms.disableShortcut(event, 'shortcutDisplayFormDetails');"
+								/>
+							</row>
+						</rows>
+					</grid>
+					<separator class="thin"/>
+					<description class="shortcutInfo">&shortcutinfo.label;</description>
+				</vbox>
+				<vbox flex="1" style="">
+					<grid>
+						<columns>
+							<column class="shortCutsLabelColumn"/>
+							<column class="shortCutsKeyColumn" flex="1"/>
+							<column/>
+							<column/>
+						</columns>
+						<rows>
+							<row align="center">
+								<description control="mouseShortcut">&shortcutfilloutforms.label;</description>
+								<textbox
+									id="mouseShortcut"
+									class="mouseShortcutTextbox"
+									readonly="true"
+								/>
+								<button
+									label="&mousebuttonclick.label;"
+									onclick="autofillForms.applyMouseButton(event, 'mouseShortcut');"
+								/>
+								<button
+									label="&disable.label;"
+									oncommand="autofillForms.disableMouseButton(event, 'mouseShortcut');"
+								/>
+							</row>
+							<row align="center">
+								<description control="mouseShortcutSubmit">&shortcutfilloutandsubmitforms.label;</description>
+								<textbox
+									id="mouseShortcutSubmit"
+									class="mouseShortcutTextbox"
+									readonly="true"
+								/>
+								<button
+									label="&mousebuttonclick.label;"
+									onclick="autofillForms.applyMouseButton(event, 'mouseShortcutSubmit');"
+								/>
+								<button
+									label="&disable.label;"
+									oncommand="autofillForms.disableMouseButton(event, 'mouseShortcutSubmit');"
+								/>
+							</row>
+							<row align="center">
+								<description control="mouseShortcutAllTabs">&shortcutfilloutformsonalltabs.label;</description>
+								<textbox
+									id="mouseShortcutAllTabs"
+									class="mouseShortcutTextbox"
+									readonly="true"
+								/>
+								<button
+									label="&mousebuttonclick.label;"
+									onclick="autofillForms.applyMouseButton(event, 'mouseShortcutAllTabs');"
+								/>
+								<button
+									label="&disable.label;"
+									oncommand="autofillForms.disableMouseButton(event, 'mouseShortcutAllTabs');"
+								/>
+							</row>
+							<row align="center">
+								<description control="mouseShortcutFromProfileSelection">&shortcutfilloutformsfromprofileselection.label;</description>
+								<textbox
+									id="mouseShortcutFromProfileSelection"
+									class="mouseShortcutTextbox"
+									readonly="true"
+								/>
+								<button
+									label="&mousebuttonclick.label;"
+									onclick="autofillForms.applyMouseButton(event, 'mouseShortcutFromProfileSelection');"
+								/>
+								<button
+									label="&disable.label;"
+									oncommand="autofillForms.disableMouseButton(event, 'mouseShortcutFromProfileSelection');"
+								/>
+							</row>
+							<row align="center">
+								<description control="mouseShortcutProfile">&shortcutprofileswitcher.label;</description>
+								<textbox
+									id="mouseShortcutProfile"
+									class="mouseShortcutTextbox"
+									readonly="true"
+								/>
+								<button
+									label="&mousebuttonclick.label;"
+									onclick="autofillForms.applyMouseButton(event, 'mouseShortcutProfile');"
+								/>
+								<button
+									label="&disable.label;"
+									oncommand="autofillForms.disableMouseButton(event, 'mouseShortcutProfile');"
+								/>
+							</row>
+							<row align="center">
+								<description control="mouseShortcutSettings">&shortcutsettings.label;</description>
+								<textbox
+									id="mouseShortcutSettings"
+									class="mouseShortcutTextbox"
+									readonly="true"
+								/>
+								<button
+									label="&mousebuttonclick.label;"
+									onclick="autofillForms.applyMouseButton(event, 'mouseShortcutSettings');"
+								/>
+								<button
+									label="&disable.label;"
+									oncommand="autofillForms.disableMouseButton(event, 'mouseShortcutSettings');"
+								/>
+							</row>
+							<row align="center">
+								<description control="mouseShortcutDisplayFormDetails">&shortcutdisplayformdetails.label;</description>
+								<textbox
+									id="mouseShortcutDisplayFormDetails"
+									class="mouseShortcutTextbox"
+									readonly="true"
+								/>
+								<button
+									label="&mousebuttonclick.label;"
+									onclick="autofillForms.applyMouseButton(event, 'mouseShortcutDisplayFormDetails');"
+								/>
+								<button
+									label="&disable.label;"
+									oncommand="autofillForms.disableMouseButton(event, 'mouseShortcutDisplayFormDetails');"
+								/>
+							</row>
+						</rows>
+					</grid>
+					<separator class="thin"/>
+					<description class="shortcutInfo">&mouseshortcutinfo.label;</description>
+				</vbox>
+			</tabpanels>	
+		</tabbox>
+	</prefpane>
+	<script
+		type="application/x-javascript"
+		src="chrome://autofillForms/content/autofillForms.js"
+	/>
+	<script
+		type="application/x-javascript"
+		src="chrome://autofillForms/content/autofillFormsOptions.js"
+	/>
+	<stringbundleset id="stringbundleset">
+		<stringbundle
+			id="autofillFormsStringBundle"
+			src="chrome://autofillForms/locale/autofillForms.properties"
+		/>
+	</stringbundleset>
+</prefwindow>
