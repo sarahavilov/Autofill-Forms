@@ -1,6 +1,12 @@
 /* globals addMessageListener, content */
 'use strict';
 
+function onchange (elem) {
+  var evt = content.document.createEvent('HTMLEvents');
+  evt.initEvent('change', true, true);
+  elem.dispatchEvent(evt);
+}
+
 addMessageListener('click', function () {
   var elems = content.document.querySelectorAll('[data-aff-click=true]');
   [].forEach.call(elems, function (elem) {
@@ -20,6 +26,7 @@ addMessageListener('focus', function () {
   [].forEach.call(elems, function (elem) {
     elem.removeAttribute('data-aff-focus');
     elem.focus();
+    onchange(elem);
   });
 });
 addMessageListener('value', function () {
@@ -27,6 +34,7 @@ addMessageListener('value', function () {
   [].forEach.call(elems, function (elem) {
     elem.value = elem.dataset.affValue;
     elem.removeAttribute('data-aff-value');
+    onchange(elem);
   });
 });
 addMessageListener('selectionEnd', function () {
