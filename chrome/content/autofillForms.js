@@ -91,8 +91,8 @@ var autofillForms = {
   // current version number
   version: "1.0.4",
 
-  action: function (elem, cmd) {
-    elem.setAttribute('data-aff-' + cmd, true);
+  action: function (elem, cmd, val) {
+    elem.setAttribute('data-aff-' + cmd, val || true);
     var wm = Components.classes['@mozilla.org/appshell/window-mediator;1']
       .getService(Components.interfaces.nsIWindowMediator);
     var browser = wm.getMostRecentWindow('navigator:browser').gBrowser.selectedBrowser;
@@ -1668,12 +1668,20 @@ var autofillForms = {
       try {
         // Try to use selection information:
         var newCursorPos = this.targetFormField.selectionStart + value.length;
-        this.targetFormField.value =   this.targetFormField.value.substr(0, this.targetFormField.selectionStart)
+/*        this.targetFormField.value =   this.targetFormField.value.substr(0, this.targetFormField.selectionStart)
                         + value
                         + this.targetFormField.value.substr(this.targetFormField.selectionEnd);
         // Adjust the cursor position:
         this.targetFormField.selectionEnd = newCursorPos;
         this.targetFormField.selectionStart = newCursorPos;
+*/
+        autofillForms.action(this.targetFormField, 'value',
+          this.targetFormField.value.substr(0, this.targetFormField.selectionStart)
+            + value
+            + this.targetFormField.value.substr(this.targetFormField.selectionEnd)
+        );
+        autofillForms.action(this.targetFormField, 'selectionEnd', newCursorPos);
+        autofillForms.action(this.targetFormField, 'selectionStart', newCursorPos);
       } catch(e) {
         // This input field does not support selections - just try to set the value:
         try {
