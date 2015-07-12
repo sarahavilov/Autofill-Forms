@@ -5085,7 +5085,8 @@ var autofillForms = {
         this.currentRuleField.value = str;
         // Call the onchange handler:
         if(this.currentRuleField.onchange) {
-          this.currentRuleField.onchange();
+          //this.currentRuleField.onchange();
+          autofillForms.action(this.currentRuleField, 'change');
         }
         // Call the focus handler:
         if(this.currentRuleField.focus) {

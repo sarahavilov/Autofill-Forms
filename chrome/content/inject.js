@@ -2,9 +2,12 @@
 'use strict';
 
 function onchange (elem) {
-  var evt = content.document.createEvent('HTMLEvents');
-  evt.initEvent('change', true, true);
-  elem.dispatchEvent(evt);
+  try {
+    var evt = content.document.createEvent('HTMLEvents');
+    evt.initEvent('change', true, true);
+    elem.dispatchEvent(evt);
+  }
+  catch (e) {}
 }
 
 addMessageListener('click', function () {
@@ -27,6 +30,13 @@ addMessageListener('focus', function () {
     elem.removeAttribute('data-aff-focus');
     elem.focus();
     onchange(elem);
+  });
+});
+addMessageListener('change', function () {
+  var elems = content.document.querySelectorAll('[data-aff-change=true]');
+  [].forEach.call(elems, function (elem) {
+    elem.removeAttribute('data-aff-change');
+    elem.onchange();
   });
 });
 addMessageListener('value', function () {
