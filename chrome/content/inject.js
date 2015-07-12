@@ -36,7 +36,7 @@ addMessageListener('change', function () {
   var elems = content.document.querySelectorAll('[data-aff-change=true]');
   [].forEach.call(elems, function (elem) {
     elem.removeAttribute('data-aff-change');
-    elem.onchange();
+    onchange(elem);
   });
 });
 addMessageListener('value', function () {

@@ -1217,6 +1217,7 @@ var autofillForms = {
         var rule = fieldRuleAlternatives[i];
         if(rule.isOverwrite()) {
           element.options[rule.getOptionsIndex()].selected = true;
+          autofillForms.action(element, 'change');
         } else {
           element.options[rule.getOptionsIndex()].selected = false;
         }
@@ -1236,6 +1237,7 @@ var autofillForms = {
       if(element.type == 'select-one') {
         if(rule.isOverwrite()) {
           element.options[rule.getOptionsIndex()].selected = true;
+          autofillForms.action(element, 'change');
         } else {
           element.options[rule.getOptionsIndex()].selected = false;
         }
