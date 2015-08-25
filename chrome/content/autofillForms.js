@@ -125,7 +125,7 @@ var autofillForms = {
     document.addEventListener("SSTabRestored", function (event) {
       function welcome (version) {
         var pre = self.autofillFormsPrefs.getCharPref("version");
-        if (pre === version) {
+        if (pre === version || !self.autofillFormsPrefs.getBoolPref("welcome")) {
           return;
         }
         //Showing welcome screen

@@ -18,7 +18,7 @@ pref('extensions.autofillForms@blueimp.net.profileLabels', 'chrome://autofillFor
 pref('extensions.autofillForms@blueimp.net.dynamicTags', 'chrome://autofillForms/locale/autofillForms.properties');
 pref('extensions.autofillForms@blueimp.net.dynamicTagCodes', 'chrome://autofillForms/locale/autofillForms.properties');
 pref('extensions.autofillForms@blueimp.net.regExpPasswordLabel', 'chrome://autofillForms/locale/autofillForms.properties');
-pref('extensions.autofillForms@blueimp.net.regExpFormFieldTypes', '^(?:(?:text(?:area)?)|(?:select-(?:(?:one)|(?:multiple)))|(?:checkbox)|(?:radio)|(?:email)|(?:url)|(?:number)|(?:password)|(?:file))$');
+pref('extensions.autofillForms@blueimp.net.regExpFormFieldTypes', '^(?:(?:text(?:area)?)|(?:select-(?:(?:one)|(?:multiple)))|(?:checkbox)|(?:radio)|(?:email)|(?:url)|(?:number)|(?:month)|(?:week)|(?:tel)|(?:password)|(?:file))$');
 pref('extensions.autofillForms@blueimp.net.enableDynamicTags', false);
 pref('extensions.autofillForms@blueimp.net.profileIndex', 0);
 pref('extensions.autofillForms@blueimp.net.storeEncrypted', false);
@@ -51,5 +51,6 @@ pref('extensions.autofillForms@blueimp.net.useConfigDirectory', false);
 pref('extensions.autofillForms@blueimp.net.profileSiteRules', '(?:)');
 pref('extensions.autofillForms@blueimp.net.autoSelectBestProfile', true);
 pref('extensions.autofillForms@blueimp.net.helpURL', 'http://firefox.add0n.com/autofill-forms.html');
+pref("extensions.autofillForms@blueimp.net.welcome", true);
 pref("extensions.autofillForms@blueimp.net.version", "");
 pref("extensions.autofillForms@blueimp.net.post_install_url", "http://firefox.add0n.com/autofill-forms.html");

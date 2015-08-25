@@ -85,14 +85,14 @@
 							</column>
 							<column>
 								<vbox>
-									<button align="left" id="buttonMoveUpProfile" class="move up" disabled="true" label="&moveup.label;" accesskey="&moveup.accesskey;" oncommand="autofillForms.moveUpProfile(event);"/>			
+									<button align="left" id="buttonMoveUpProfile" class="move up" disabled="true" label="&moveup.label;" accesskey="&moveup.accesskey;" oncommand="autofillForms.moveUpProfile(event);"/>
 									<button align="left" id="buttonMoveDownProfile" class="move down" disabled="true" label="&movedown.label;" accesskey="&movedown.accesskey;" oncommand="autofillForms.moveDownProfile(event);"/>
 									<button label="&add.label;" accesskey="&add.accesskey;" oncommand="autofillForms.addProfile(document.getElementById('profileLabelTextBox').value);"/>
 									<button label="&remove.label;" accesskey="&remove.accesskey;" oncommand="autofillForms.removeProfile(event);"/>
 								</vbox>
 								<vbox>
-									<button id="buttonApplyProfile" label="&apply.label;" oncommand="autofillForms.changeProfileLabel(document.getElementById('profileLabelTextBox').value);"/>							
-									<button label="&ruleeditorbutton.label;" oncommand="autofillForms.showDialog('chrome://autofillForms/content/autofillFormsRuleEditor.xul', document.getElementById('profileSiteRuleTextBox2'));"/>							
+									<button id="buttonApplyProfile" label="&apply.label;" oncommand="autofillForms.changeProfileLabel(document.getElementById('profileLabelTextBox').value);"/>
+									<button label="&ruleeditorbutton.label;" oncommand="autofillForms.showDialog('chrome://autofillForms/content/autofillFormsRuleEditor.xul', document.getElementById('profileSiteRuleTextBox2'));"/>
 								</vbox>
 							</column>
 						</columns>
@@ -192,9 +192,9 @@
 				</columns>
 				<rows>
 					<row align="center">
-						<label control="fieldRuleNameTextBox" value="&fieldrulename.label;:"/>	
+						<label control="fieldRuleNameTextBox" value="&fieldrulename.label;:"/>
 						<textbox id="fieldRuleNameTextBox" onchange="autofillForms.applyFieldRule(event);"/>
-						<button align="left" id="buttonMoveUpFieldRule" class="move up" disabled="true" label="&moveup.label;" accesskey="&moveup.accesskey;" oncommand="autofillForms.moveUpFieldRule(event);"/>					
+						<button align="left" id="buttonMoveUpFieldRule" class="move up" disabled="true" label="&moveup.label;" accesskey="&moveup.accesskey;" oncommand="autofillForms.moveUpFieldRule(event);"/>
 					</row>
 					<row align="center">
 						<label control="fieldRuleValueTextBox" value="&fieldrulevalue.label;:"/>
@@ -241,6 +241,7 @@
 			<preference id="matchAgainstPositions" 			name="extensions.autofillForms@blueimp.net.matchAgainstPositions" 			type="bool"/>
 			<preference id="callOnChangeAfterFillingFields"	name="extensions.autofillForms@blueimp.net.callOnChangeAfterFillingFields" 	type="bool"/>
 			<preference id="positionsIdentifier" 			name="extensions.autofillForms@blueimp.net.positionsIdentifier" 			type="unichar"/>
+			<preference id="welcome" 			name="extensions.autofillForms@blueimp.net.welcome" 			type="bool"/>
 			<preference id="placeholderLineBreak" 			name="extensions.autofillForms@blueimp.net.placeholderLineBreak" 			type="unichar"/>
 			<preference id="placeholderTab" 				name="extensions.autofillForms@blueimp.net.placeholderTab" 					type="unichar"/>
 			<preference id="useConfigDirectory" 			name="extensions.autofillForms@blueimp.net.useConfigDirectory" 				type="bool"/>
@@ -288,6 +289,7 @@
 							<spacer flex="1"/>
 							<textbox id="placeholderTabTextbox" preference="placeholderTab" class="placeholderTextbox"/>
 						</hbox>
+						<checkbox label="Show welcome page on upgrade" preference="welcome"/>
 				</vbox>
 					</groupbox>
 					<separator class="thin"/>
@@ -600,7 +602,7 @@
 					<separator class="thin"/>
 					<description class="shortcutInfo">&mouseshortcutinfo.label;</description>
 				</vbox>
-			</tabpanels>	
+			</tabpanels>
 		</tabbox>
 	</prefpane>
 	<script
