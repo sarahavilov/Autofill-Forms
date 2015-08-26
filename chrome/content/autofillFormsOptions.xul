@@ -23,7 +23,7 @@
 				<spacer flex="1"/>
 			</hbox>
 			<separator class="thin"/>
-			<vbox flex="1" id="simpleInterfaceRowsContainer" style="overflow:auto;max-height:450px;">
+			<vbox flex="1" id="simpleInterfaceRowsContainer" style="overflow:auto;">
 				<grid>
 					<columns>
 						<column/>
@@ -167,22 +167,24 @@
 				</rows>
 			</grid>
 			<separator class="thin"/>
-			<tree id="fieldRulesTree" seltype="multiple" flex="1" editable="true" enableColumnDrag="true" onkeypress="autofillForms.handleKeyPress(event)" onselect="autofillForms.selectedFieldRule(event);">
-				<treecols>
-					<treecol id="fieldRuleName" label="&fieldrulename.label;" flex="1" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
-					<splitter class="tree-splitter"/>
-					<treecol id="fieldRuleValue" label="&fieldrulevalue.label;" flex="2" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
-					<splitter class="tree-splitter"/>
-					<treecol id="fieldRuleFieldRule" hidden="true" label="&fieldrulefieldrule.label;" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
-					<splitter class="tree-splitter"/>
-					<treecol id="fieldRuleSiteRule" hidden="true" label="&fieldrulesiterule.label;" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
-					<splitter class="tree-splitter"/>
-					<treecol id="fieldRuleOverwrite" label="&fieldruleoverwrite.label;" type="checkbox" editable="true" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
-					<splitter class="tree-splitter"/>
-					<treecol id="fieldRuleEnabled" label="&fieldruleenabled.label;" type="checkbox" editable="true" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
-				</treecols>
-				<treechildren id="fieldRulesTreeChildren" />
-			</tree>
+			<vbox flex="1">
+				<tree id="fieldRulesTree" seltype="multiple" flex="1" editable="true" enableColumnDrag="true" onkeypress="autofillForms.handleKeyPress(event)" onselect="autofillForms.selectedFieldRule(event);">
+					<treecols>
+						<treecol id="fieldRuleName" label="&fieldrulename.label;" flex="1" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
+						<splitter class="tree-splitter"/>
+						<treecol id="fieldRuleValue" label="&fieldrulevalue.label;" flex="2" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
+						<splitter class="tree-splitter"/>
+						<treecol id="fieldRuleFieldRule" hidden="true" label="&fieldrulefieldrule.label;" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
+						<splitter class="tree-splitter"/>
+						<treecol id="fieldRuleSiteRule" hidden="true" label="&fieldrulesiterule.label;" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
+						<splitter class="tree-splitter"/>
+						<treecol id="fieldRuleOverwrite" label="&fieldruleoverwrite.label;" type="checkbox" editable="true" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
+						<splitter class="tree-splitter"/>
+						<treecol id="fieldRuleEnabled" label="&fieldruleenabled.label;" type="checkbox" editable="true" persist="width ordinal hidden" onclick="autofillForms.sortFieldRules(event);"/>
+					</treecols>
+					<treechildren id="fieldRulesTreeChildren" />
+				</tree>
+		</vbox>
 			<separator class="thin"/>
 			<grid>
 				<columns>
