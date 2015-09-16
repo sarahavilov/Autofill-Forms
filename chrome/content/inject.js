@@ -3,9 +3,11 @@
 
 function onchange (elem) {
   try {
-    var evt = content.document.createEvent('HTMLEvents');
-    evt.initEvent('change', true, true);
-    elem.dispatchEvent(evt);
+    // var evt = content.document.createEvent('HTMLEvents');
+    // evt.initEvent('change', true, true);
+    // elem.dispatchEvent(evt);
+    var event = new Event('change');
+    elem.dispatchEvent(event);
   }
   catch (e) {}
 }

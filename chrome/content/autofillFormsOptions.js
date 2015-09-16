@@ -14,13 +14,12 @@ var {Services} = Components.utils.import("resource://gre/modules/Services.jsm");
     if (os === 'Darwin') {
       bp.setBoolPref('animateFadeIn', false);
     }
-   autofillForms.optionsInitialize();
+    autofillForms.optionsInitialize();
   }, false);
   window.addEventListener('unload', function() {
     if (os === 'Darwin') {
       bp.setBoolPref('animateFadeIn', p);
-      console.error(p);
     }
-   autofillForms.optionsFinalize();
+    autofillForms.optionsFinalize();
   }, false);
 })(Services.appinfo.OS);
