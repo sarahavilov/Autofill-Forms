@@ -23,7 +23,7 @@
 				<spacer flex="1"/>
 			</hbox>
 			<separator class="thin"/>
-			<vbox flex="1" id="simpleInterfaceRowsContainer" style="overflow:auto;">
+			<vbox flex="1" id="simpleInterfaceRowsContainer">
 				<grid>
 					<columns>
 						<column/>

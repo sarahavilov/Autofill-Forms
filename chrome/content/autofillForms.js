@@ -92,7 +92,7 @@ var autofillForms = {
   version: "1.0.4",
 
   action: function (elem, cmd, val) {
-    elem.setAttribute('data-aff-' + cmd, val || true);
+    elem.setAttribute('data-aff-' + cmd, val);
     var wm = Components.classes['@mozilla.org/appshell/window-mediator;1']
       .getService(Components.interfaces.nsIWindowMediator);
     var browser = wm.getMostRecentWindow('navigator:browser').gBrowser.selectedBrowser;
@@ -104,7 +104,7 @@ var autofillForms = {
     mm.sendAsyncMessage(cmd);
   },
 
-  initialize: function() {
+  initialize: function () {
 
     // Save the reference to the Autofill Forms preferences branch:
     this.autofillFormsPrefs = this.getPrefManager().getBranch('extensions.autofillForms@blueimp.net.');
@@ -114,9 +114,9 @@ var autofillForms = {
      this.autofillFormsPrefs.addObserver('', this, false);
 
     // Implement the event listener for the content area context menu:
-    this.contentAreaContextMenuEventListener = function(event) {
+    this.contentAreaContextMenuEventListener = function (event) {
       autofillForms.initContentAreaContextMenu(event);
-    }
+    };
 
     // Initialize the preferences settings:
     this.initializePrefs();
@@ -910,7 +910,7 @@ var autofillForms = {
         optionsIndex: null,
         element: null,
         getValue: function() {
-          if(this.fieldRuleValue === null) {
+          if(!this.fieldRuleValue) {
             // Replace dynamic tags if enabled:
             if(this.af.autofillFormsPrefs.getBoolPref('enableDynamicTags'))
               this.fieldRuleValue = this.af.replaceDynamicTags(this.fieldRule['fieldRuleValue']);
@@ -1264,17 +1264,17 @@ var autofillForms = {
         if(!element.value || rule.isOverwrite()) {
           if(element.type == 'textarea') {
             // Replace control character placeholders:
-            element.value = this.replaceControlCharacterPlaceholders(rule.getValue());
+            //element.value = this.replaceControlCharacterPlaceholders(rule.getValue());
+            autofillForms.action(element, 'value', this.replaceControlCharacterPlaceholders(rule.getValue()))
           } else {
-            element.value = rule.getValue();
+            //element.value = rule.getValue();
+            autofillForms.action(element, 'value', rule.getValue());
           }
         }
       }
       if(this.autofillFormsPrefs.getBoolPref('callOnChangeAfterFillingFields')) {
         this.fireEvent(element,'change')
       }
-
-
     }
 
     //remove the div, not needed anymore
@@ -1687,7 +1687,8 @@ var autofillForms = {
       } catch(e) {
         // This input field does not support selections - just try to set the value:
         try {
-          this.targetFormField.value = value;
+          //this.targetFormField.value = value;
+          autofillForms.action(this.targetFormField, 'value', value);
         } catch(e) {
           // Catch errors if value could not be set on the form field
         }

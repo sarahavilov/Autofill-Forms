@@ -3,11 +3,10 @@
 
 function onchange (elem) {
   try {
-    // var evt = content.document.createEvent('HTMLEvents');
-    // evt.initEvent('change', true, true);
-    // elem.dispatchEvent(evt);
-    var event = new Event('change');
-    elem.dispatchEvent(event);
+    elem.dispatchEvent(new Event('change'));
+    elem.dispatchEvent(new Event('keydown'));
+    elem.dispatchEvent(new Event('keyup'));
+    elem.dispatchEvent(new Event('keychange'));
   }
   catch (e) {}
 }
@@ -59,13 +58,13 @@ addMessageListener('value', function () {
 });
 addMessageListener('selectionEnd', function () {
   toList('[data-aff-selectionEnd]').forEach(function (elem) {
-    elem.selectionEnd = elem.dataset.affSelectionEnd;
+    elem.selectionEnd = elem.dataset.affSelectionend;
     elem.removeAttribute('data-aff-selectionEnd');
   });
 });
 addMessageListener('selectionStart', function () {
   toList('[data-aff-selectionStart]').forEach(function (elem) {
-    elem.selectionStart = elem.dataset.affSelectionStart;
-    elem.removeAttribute('data-aff-selectionStart');
+    elem.selectionStart = elem.dataset.affSelectionstart;
+    elem.removeAttribute('data-aff-selectionstart');
   });
 });
