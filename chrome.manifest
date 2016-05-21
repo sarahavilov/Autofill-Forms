@@ -27,3 +27,5 @@ style		chrome://autofillforms/content/autofillFormsOptions.xul		chrome://autofil
 style		chrome://autofillforms/content/autofillFormsOptions.xul		chrome://autofillforms/skin/autofillFormsOptions1.5.css		appversion<2.0
 style		chrome://browser/content/browser.xul						chrome://autofillforms/skin/autofillFormsMac.css			appversion>=3.0 os=Darwin
 style		chrome://global/content/customizeToolbar.xul				chrome://autofillforms/skin/autofillFormsMac.css			appversion>=3.0 os=Darwin
+
+resource autofillforms chrome/content/

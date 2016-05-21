@@ -7,6 +7,14 @@
  */
 
 var autofillForms = {
+  require: (function () {
+    var {require} = Cu.import("resource://gre/modules/commonjs/toolkit/require.js", {});
+    return require ? {
+      Worker: require('sdk/content/worker').Worker,
+      utils: require('sdk/tabs/utils'),
+      tabs: require('sdk/tabs')
+    } : {};
+  })(),
 
   // The selected profile index:
   profileIndex: null,
@@ -93,15 +101,47 @@ var autofillForms = {
 
   action: function (elem, cmd, val) {
     elem.setAttribute('data-aff-' + cmd, val);
-    var wm = Components.classes['@mozilla.org/appshell/window-mediator;1']
-      .getService(Components.interfaces.nsIWindowMediator);
-    var browser = wm.getMostRecentWindow('navigator:browser').gBrowser.selectedBrowser;
-    var mm = browser.messageManager;
-    if (!browser.slScript) {
-      mm.loadFrameScript('chrome://autofillforms/content/inject.js', true);
-      browser.slScript = true;
+
+    var doc = elem.ownerDocument;
+    var contentWindow = doc.defaultView || doc.parentWindow;
+
+
+    function oldMethod () {
+      console.error('old Method');
+      var wm = Components.classes['@mozilla.org/appshell/window-mediator;1']
+        .getService(Components.interfaces.nsIWindowMediator);
+      var browser = wm.getMostRecentWindow('navigator:browser').gBrowser.selectedBrowser;
+      var mm = browser.messageManager;
+      if (!browser.slScript) {
+        mm.loadFrameScript('chrome://autofillforms/content/inject.js', true);
+        browser.slScript = true;
+      }
+      mm.sendAsyncMessage(cmd);
     }
-    mm.sendAsyncMessage(cmd);
+
+    if ('Worker' in autofillForms.require && contentWindow) {
+      var tab = autofillForms.require.utils.getTabForContentWindow(contentWindow);
+      if (tab) {
+        var tabId = autofillForms.require.utils.getTabId(tab);
+        for each (let sdkTab in autofillForms.require.tabs) {
+          if (sdkTab.id === tabId) {
+            let worker = sdkTab.attach({
+              contentScriptFile: 'resource://autofillforms/sdk.js',
+            });
+            worker.port.on('done', function () {
+              worker.destroy();
+            });
+            worker.port.emit(cmd, val);
+            return;
+          }
+        }
+      }
+
+      oldMethod();
+    }
+    else {
+      oldMethod();
+    }
   },
 
   initialize: function () {
@@ -644,7 +684,6 @@ var autofillForms = {
     }
 
     autoSubmit = autoSubmit ? autoSubmit : null;
-
     if(allTabs) {
       // Fill out forms on all open browser tabs:
       for(var i=0; i<this.getBrowser().browsers.length; i++) {
@@ -4447,6 +4486,7 @@ var autofillForms = {
       try {
         var regExpObj = new RegExp(this.getDynamicTags()[j],'g');
         // We use eval() here without restrictions - the given tagCode must be trusted:
+        // http://forums.mozillazine.org/viewtopic.php?f=48&t=537839&start=435
         fieldRuleValue = fieldRuleValue.replace(regExpObj, eval(this.getDynamicTagCodes()[j]));
       } catch(e) {
         this.log(e);
@@ -5300,6 +5340,7 @@ var autofillForms = {
         try {
           validationResultTextBox.removeAttribute('style');
           // We use eval() here without restrictions - the given tagCode must be trusted:
+          // http://forums.mozillazine.org/viewtopic.php?f=48&t=537839&start=435
           validationResultTextBox.value = eval(tagCode);
         } catch(e) {
           validationResultTextBox.setAttribute('style', 'color:red;');
