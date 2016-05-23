@@ -8,7 +8,7 @@
 
 var autofillForms = {
   require: (function () {
-    var {require} = Cu.import("resource://gre/modules/commonjs/toolkit/require.js", {});
+    var {require} = Components.utils.import("resource://gre/modules/commonjs/toolkit/require.js", {});
     return require ? {
       Worker: require('sdk/content/worker').Worker,
       utils: require('sdk/tabs/utils'),
@@ -100,11 +100,10 @@ var autofillForms = {
   version: "1.0.4",
 
   action: function (elem, cmd, val) {
+    console.error(cmd);
     elem.setAttribute('data-aff-' + cmd, val);
 
     var doc = elem.ownerDocument;
-    var contentWindow = doc.defaultView || doc.parentWindow;
-
 
     function oldMethod () {
       console.error('old Method');
@@ -119,24 +118,26 @@ var autofillForms = {
       mm.sendAsyncMessage(cmd);
     }
 
-    if ('Worker' in autofillForms.require && contentWindow) {
-      var tab = autofillForms.require.utils.getTabForContentWindow(contentWindow);
-      if (tab) {
-        var tabId = autofillForms.require.utils.getTabId(tab);
-        for each (let sdkTab in autofillForms.require.tabs) {
-          if (sdkTab.id === tabId) {
-            let worker = sdkTab.attach({
-              contentScriptFile: 'resource://autofillforms/sdk.js',
-            });
-            worker.port.on('done', function () {
-              worker.destroy();
-            });
-            worker.port.emit(cmd, val);
-            return;
+    if ('Worker' in autofillForms.require && doc) {
+      var contentWindow = doc.defaultView || doc.parentWindow;
+      if (contentWindow) {
+        var tab = autofillForms.require.utils.getTabForContentWindow(contentWindow);
+        if (tab) {
+          var tabId = autofillForms.require.utils.getTabId(tab);
+          for each (let sdkTab in autofillForms.require.tabs) {
+            if (sdkTab && sdkTab.id === tabId) {
+              let worker = sdkTab.attach({
+                contentScriptFile: 'resource://autofillforms/sdk.js',
+              });
+              worker.port.on('done', function () {
+                worker.destroy();
+              });
+              worker.port.emit(cmd, val);
+              return;
+            }
           }
         }
       }
-
       oldMethod();
     }
     else {

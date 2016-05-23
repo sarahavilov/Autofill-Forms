@@ -16,6 +16,7 @@ function toList (att) {
     [content.document],
     [].map.call(content.document.getElementsByTagName('iframe'), f => f.contentDocument)
   )
+  .filter(doc => doc)
   .map(function (doc) {
     return [].slice.call(doc.querySelectorAll(att), 0);
   })
@@ -25,26 +26,26 @@ function toList (att) {
 }
 
 addMessageListener('click', function () {
-  toList('[data-aff-click=true]').forEach(function (elem) {
+  toList('[data-aff-click]').forEach(function (elem) {
     elem.removeAttribute('data-aff-click');
     elem.click();
   });
 });
 addMessageListener('submit', function () {
-  toList('[data-aff-submit=true]').forEach(function (elem) {
+  toList('[data-aff-submit]').forEach(function (elem) {
     elem.removeAttribute('data-aff-submit');
     elem.submit();
   });
 });
 addMessageListener('focus', function () {
-  toList('[data-aff-focus=true]').forEach(function (elem) {
+  toList('[data-aff-focus]').forEach(function (elem) {
     elem.removeAttribute('data-aff-focus');
     elem.focus();
     onchange(elem);
   });
 });
 addMessageListener('change', function () {
-  toList('[data-aff-change=true]').forEach(function (elem) {
+  toList('[data-aff-change]').forEach(function (elem) {
     elem.removeAttribute('data-aff-change');
     onchange(elem);
   });

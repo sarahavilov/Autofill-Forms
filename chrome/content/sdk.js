@@ -16,6 +16,7 @@ function toList (att) {
     [window.document],
     [].map.call(window.document.getElementsByTagName('iframe'), f => f.contentDocument)
   )
+  .filter(doc => doc)
   .map(function (doc) {
     return [].slice.call(doc.querySelectorAll(att), 0);
   })
@@ -25,21 +26,21 @@ function toList (att) {
 }
 
 self.port.on('click', function () {
-  toList('[data-aff-click=true]').forEach(function (elem) {
+  toList('[data-aff-click]').forEach(function (elem) {
     elem.removeAttribute('data-aff-click');
     elem.click();
   });
   self.port.emit('done');
 });
 self.port.on('submit', function () {
-  toList('[data-aff-submit=true]').forEach(function (elem) {
+  toList('[data-aff-submit]').forEach(function (elem) {
     elem.removeAttribute('data-aff-submit');
     elem.submit();
   });
   self.port.emit('done');
 });
 self.port.on('focus', function () {
-  toList('[data-aff-focus=true]').forEach(function (elem) {
+  toList('[data-aff-focus]').forEach(function (elem) {
     elem.removeAttribute('data-aff-focus');
     elem.focus();
     onchange(elem);
@@ -47,7 +48,7 @@ self.port.on('focus', function () {
   self.port.emit('done');
 });
 self.port.on('change', function () {
-  toList('[data-aff-change=true]').forEach(function (elem) {
+  toList('[data-aff-change]').forEach(function (elem) {
     elem.removeAttribute('data-aff-change');
     onchange(elem);
   });
