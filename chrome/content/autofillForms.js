@@ -100,53 +100,66 @@ var autofillForms = {
   version: "1.0.4",
 
   action: function (elem, cmd, val) {
-    console.error(cmd);
     elem.setAttribute('data-aff-' + cmd, val);
-
-    var doc = elem.ownerDocument;
-
-    function oldMethod () {
-      console.error('old Method');
-      var wm = Components.classes['@mozilla.org/appshell/window-mediator;1']
+    let doc = elem.ownerDocument;
+    try {
+      let contentWindow = doc.defaultView || doc.parentWindow;
+      let sandbox = Components.utils.Sandbox(contentWindow, {
+        sandboxPrototype: contentWindow,
+        wantXrays: true
+      });
+      Components.utils.evalInSandbox(`
+        function onChange (element) {
+          element.dispatchEvent(new Event('change'));
+          element.dispatchEvent(new Event('keydown'));
+          element.dispatchEvent(new Event('keyup'));
+          element.dispatchEvent(new Event('keychange'));
+        }
+        var list = Array.from(document.querySelectorAll("[${'data-aff-' + cmd}]"));
+        list.forEach( function(element, index) {
+          if ('${cmd}' === 'click') {
+            element.click();
+          }
+          if ('${cmd}' === 'submit') {
+            element.submit();
+          }
+          if ('${cmd}' === 'focus') {
+            console.error('ffff');
+            element.focus();
+            onChange(element);
+          }
+          if ('${cmd}' === 'change') {
+            onChange(element);
+          }
+          if ('${cmd}' === 'value') {
+            element.value = element.dataset.affValue;
+            onChange(element);
+          }
+          if ('${cmd}' === 'selectionEnd') {
+            element.selectionEnd = element.dataset.affSelectionend;
+          }
+          if ('${cmd}' === 'selectionStart') {
+            element.selectionStart = element.dataset.affSelectionstart;
+          }
+        });
+        list.forEach( function(element, index) {
+          element.removeAttribute('${'data-aff-' + cmd}');
+        });
+      `, sandbox);
+    } catch (e) {
+      let wm = Components.classes['@mozilla.org/appshell/window-mediator;1']
         .getService(Components.interfaces.nsIWindowMediator);
-      var browser = wm.getMostRecentWindow('navigator:browser').gBrowser.selectedBrowser;
-      var mm = browser.messageManager;
+      let browser = wm.getMostRecentWindow('navigator:browser').gBrowser.selectedBrowser;
+      let mm = browser.messageManager;
       if (!browser.slScript) {
         mm.loadFrameScript('chrome://autofillforms/content/inject.js', true);
         browser.slScript = true;
       }
       mm.sendAsyncMessage(cmd);
     }
-
-    if ('Worker' in autofillForms.require && doc) {
-      var contentWindow = doc.defaultView || doc.parentWindow;
-      if (contentWindow) {
-        var tab = autofillForms.require.utils.getTabForContentWindow(contentWindow);
-        if (tab) {
-          var tabId = autofillForms.require.utils.getTabId(tab);
-          for each (let sdkTab in autofillForms.require.tabs) {
-            if (sdkTab && sdkTab.id === tabId) {
-              let worker = sdkTab.attach({
-                contentScriptFile: 'resource://autofillforms/sdk.js',
-              });
-              worker.port.on('done', function () {
-                worker.destroy();
-              });
-              worker.port.emit(cmd, val);
-              return;
-            }
-          }
-        }
-      }
-      oldMethod();
-    }
-    else {
-      oldMethod();
-    }
   },
 
   initialize: function () {
-
     // Save the reference to the Autofill Forms preferences branch:
     this.autofillFormsPrefs = this.getPrefManager().getBranch('extensions.autofillForms@blueimp.net.');
 
