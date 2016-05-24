@@ -7,15 +7,6 @@
  */
 
 var autofillForms = {
-  require: (function () {
-    var {require} = Components.utils.import("resource://gre/modules/commonjs/toolkit/require.js", {});
-    return require ? {
-      Worker: require('sdk/content/worker').Worker,
-      utils: require('sdk/tabs/utils'),
-      tabs: require('sdk/tabs')
-    } : {};
-  })(),
-
   // The selected profile index:
   profileIndex: null,
   // The selected global profile index:
